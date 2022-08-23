@@ -17,6 +17,7 @@
       <i
         class="fa-solid fa-bars ml-8"
         @click="toggleSideBar"
+        v-click-outside="closeSideBar2"
         id="toggleSideBar"
       ></i>
     </div>
@@ -35,7 +36,6 @@
             pr-5
           "
           v-if="sideBarVisible"
-          @click="closeSideBar2"
         />
       </transition>
       <div class="child font-semibold">
@@ -101,7 +101,7 @@ display: none;
     display: none;
   }
   .sidebar2 {
-    display: inherit;
+    display: inherit; min-width: 65%; left: 0px;
   }
   .child {
     flex-basis: 100%;
@@ -119,15 +119,12 @@ display: none;
 }
 
 /* Transitions */
-.slide-enter-active {
-  transition: all 1s ease;
-}
-.slide-leave-active {
+.slide-enter-active, .slide-leave-active {
   transition: all 1s ease;
 }
 
 .slide-enter,
-.slide-leave-to {
-  transform: translateX(-300px);
+.slide-leave-active {
+  transform: translateX(-300px); opacity: 0;
 }
 </style>

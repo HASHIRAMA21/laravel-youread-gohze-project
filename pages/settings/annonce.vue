@@ -3,10 +3,13 @@
     <div class="ml-5 border-b border-gray-200 py-5 w-full">
         <div class="settingbloc">
             <div class="flex place-items-center">
-            <input type="checkbox" name="receiveNotif" id="receiveNotif" 
+            <!-- <input type="checkbox" name="receiveNotif" id="receiveNotif" 
             class="border border-gray-400 my-2 w-5 h-6 mr-4" 
-            v-model="mainStore.currentUser.receiveComments">
-            <label for="receiveNotif">Receive comments from users</label>
+            v-model="mainStore.currentUser.receiveComments"> -->
+            <Vue3ToggleButton v-model:isActive="mainStore.currentUser.receiveComments"
+             :trackActiveColor="'#007D74'" :trackWidth="'50px'" :trackHeight="'20px'"
+              :handleDiameter="'20px'" :handleDistance="'28px'"> </Vue3ToggleButton>
+            <label for="receiveNotif" class="ml-4">Receive comments from users</label>
             </div>
             <div class="text-sm text-gray-600">
                 Receive comments from users
@@ -16,10 +19,10 @@
     <div class="ml-5  py-5 w-full">
         <div class="settingbloc">
             <div class="flex place-items-center">
-            <input type="checkbox" name="receiveNotif" id="receiveNotif" 
-            class="border border-gray-400 my-2 w-5 h-6 mr-4" 
-            v-model="mainStore.currentUser.receiveLikes">
-            <label for="receiveNotif">Receive likes from users</label>
+            <Vue3ToggleButton v-model:isActive="mainStore.currentUser.receiveLikes"
+             :trackActiveColor="'#007D74'" :trackWidth="'50px'" :trackHeight="'20px'"
+              :handleDiameter="'20px'" :handleDistance="'28px'"> </Vue3ToggleButton>
+            <label for="receiveNotif" class="ml-4">Receive likes from users</label>
             </div>
             <div class="text-sm text-gray-600">
                 Receive likes from users
@@ -33,8 +36,14 @@
 <script>
 import {onMounted} from 'vue'
 import {useMainStore} from '~/store'
+import { Vue3ToggleButton } from 'vue3-toggle-button'
+import '~/node_modules/vue3-toggle-button/dist/style.css'
+
 
 export default {
+    components: {
+      Vue3ToggleButton
+    },
     setup() {
     const mainStore = useMainStore();
 
@@ -47,6 +56,7 @@ export default {
 }
 </script>
 <style scoped>
+div.toggle-slider{height: 20px;}
 input{outline: none;}
 .fakediv i{
     top: 14px;

@@ -3,10 +3,10 @@
     <div class="ml-5 border-b border-gray-200 py-5 w-full">
         <div class="settingbloc">
             <div class="flex justify-end place-items-center">
-            <input type="checkbox" name="receiveNotif" id="receiveNotif" 
-            class="border border-gray-400 my-2 w-5 h-6 mr-4" 
-            v-model="mainStore.currentUser.receiveNotifications">
-            <label for="receiveNotif">Receive notifications</label>
+            <Vue3ToggleButton v-model:isActive="mainStore.currentUser.receiveNotifications"
+             :trackActiveColor="'#007D74'" :trackWidth="'50px'" :trackHeight="'20px'"
+              :handleDiameter="'20px'" :handleDistance="'28px'"> </Vue3ToggleButton>
+            <label for="receiveNotif" class="ml-4">Receive notifications</label>
             </div>
         </div>
     </div>
@@ -27,8 +27,13 @@
 <script>
 import {onMounted} from 'vue'
 import {useMainStore} from '~/store'
+import { Vue3ToggleButton } from 'vue3-toggle-button'
+import '~/node_modules/vue3-toggle-button/dist/style.css'
 
 export default {
+    components: {
+      Vue3ToggleButton
+    },
     setup() {
     const mainStore = useMainStore();
 
@@ -41,6 +46,7 @@ export default {
 }
 </script>
 <style scoped>
+div.toggle-slider{height: 20px;}
 .settingbloc{
     width: 500px;
 }
