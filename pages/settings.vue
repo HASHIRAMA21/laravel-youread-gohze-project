@@ -63,7 +63,7 @@ export default {
       toggleSideBar,
       closeSideBar2,
     };
-  },
+  }
 };
 </script>
 <style scoped>

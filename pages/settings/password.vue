@@ -9,7 +9,7 @@
         <div class="settingbloc">
             <div class="ligne flex justify-end place-items-center">
             <label for="oldpass">Old password </label> <input type="password" name="oldpass" id="oldpass" 
-            class="border border-gray-400 h-9 my-2 w-72 ml-4">
+            class="border border-gray-400 h-9 my-2 w-72 ml-4 pl-1">
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
         <div class="settingbloc">
             <div class="ligne flex justify-end place-items-center">
             <label for="newpass">New password </label> <input type="password" name="newpass" id="newpass"
-            class="border border-gray-400 h-9 my-2 w-72 ml-4">
+            class="border border-gray-400 h-9 my-2 w-72 ml-4 pl-1">
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
         <div class="settingbloc">
             <div class="ligne flex justify-end place-items-center">
             <label for="newpass2">Re-enter new password </label> <input type="password" name="newpass2" id="newpass2" 
-            class="border border-gray-400 h-9 my-2 w-72 ml-4">
+            class="border border-gray-400 h-9 my-2 w-72 ml-4 pl-1">
             </div>
         </div>
         <div class="flex justify-end place-items-center h-28 settingbloc">
