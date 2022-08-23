@@ -4,3 +4,7 @@
   <slot />
 </div>
 </template>
+<style>
+@import url('~/assets/css/all.min.css');
+@import url('~/assets/css/stylegeneral.css');
+</style>
