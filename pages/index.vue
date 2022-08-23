@@ -15,6 +15,8 @@ export default {
 </script>
 
 <style>
+
+@import url("./../assets/fontAwesome/css/all.min.css");
 a.nuxt-link-active {
   font-weight: bold;
 }
