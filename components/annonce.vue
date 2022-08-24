@@ -1,6 +1,6 @@
 <template>
   <div class="cursor-pointer w-full flex mt-4 annonce">
-    <div class="rounded-full w-16 h-16 lg:ml-11 ml-7 justify-center">
+    <div class="rounded-full w-16 h-16 md:ml-11 ml-4 justify-center">
       <img :src="imgUrl" class="w-full object-cover" />
     </div>
     <div class="content m-text-bigger-normal ml-5 lg:ml-9">
