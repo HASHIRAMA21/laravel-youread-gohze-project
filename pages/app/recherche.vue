@@ -4,7 +4,7 @@
             <figure class="circle-md bg-indigo first-figure"></figure>
         </div>
         <div>
-            <p class="uppercase font-bold text-xl mt-1 title">parcourir les categories</p>
+            <p class="uppercase font-bold text-xl mt-1 title xl:ml-14 lg:ml-16  md:ml-28 sm:ml-16 ml-10">parcourir les categories</p>
         </div>
         <div class="flex justify-center">
             <div class="grid xl:grid-cols-4 container-cat gap-4 lg:grid-cols-3 sm:grid-cols-2 button">
@@ -12,11 +12,11 @@
                     <categorie class="" :name="cat.name" :imageUrl="cat.image" />
                 </div>
             </div>
-            <div class="ml-8 mt-8">
-                <figure class="circle-xl bg-orange"></figure>
+            <div class="ml-8 mt-8 disappear">
+                <figure class="circle-xl bg-orange "></figure>
             </div>
-            <div>
-                <figure class="circle-md bg-indigo ml-7 mt-64"></figure>
+            <div class="disappear">
+                <figure class="circle-md bg-indigo ml-7 mt-64 "></figure>
             </div>
         </div>
 
@@ -29,6 +29,9 @@
     </div>
 </template>
 <style scoped>
+@media only screen and (max-width: 1024px) {
+   .disappear{ display: none ; }
+}
 .first-figure{
     margin-left: 35%;
 }
@@ -36,9 +39,13 @@
     max-width: 85%;
     
 }
+@media only screen and (max-width: 640px){
+    .title{text-align: center;}
+}
 .title{
-    width: 76%;
-    margin: auto;
+    /* width: 76%;
+    margin: auto; */
+    /* max-width: 85%; */
     margin-bottom: 20px;
 }
 p{
