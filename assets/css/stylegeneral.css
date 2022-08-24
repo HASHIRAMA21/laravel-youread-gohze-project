@@ -1,0 +1,36 @@
+:root {
+    --vertbleu: #007D74;
+    --violet2: rgb(206, 181, 236);
+    --hauteur-header: 118px;
+}
+body{
+  background-color: #FEFEFE;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bg-vertbleu{
+    background-color: var(--vertbleu);
+}
+.text-vertbleu{
+    color: var(--vertbleu);
+}
+.border-vertbleu{
+    border-color: var(--vertbleu);
+}
+
+.cercle{
+    border-radius: 50%;
+}
+
+input[type="checkbox"]{
+    accent-color: var(--vertbleu);
+}
+
+/* Transitions lors d'un changement de route */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
