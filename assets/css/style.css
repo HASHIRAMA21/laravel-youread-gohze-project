@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-*{
-    font-family: 'Poppins', sans-serif;
-}
 .text-gray{
     color: #5A5A5A;
 }
@@ -21,9 +17,7 @@
 .bg-indigo-light{
     background-color: #1CC9BD;
 }
-.m-auto{
-    margin:auto;
-}
+
 .circle-xxl , .circle-xl , .circle-lg , .circle-md , .circle-sm{
     display: block;
     border-radius: 50%;
@@ -48,40 +42,26 @@
     width: 8px;
     height: 8px;
 }
+.m-text-extra-small{
+    @apply md:text-xs;
+    @apply text-sm
+}
 .m-text-small {
-    @apply text-base;
     @apply md:text-sm;
+    @apply text-xs;
 }
 .m-text-normal {
-    @apply text-sm;
     @apply md:text-base;
+    @apply text-sm;
 }
-  
 .m-text-bigger-normal {
     @apply text-sm;
     @apply md:text-base;
     @apply lg:text-lg;
 }
-
 .m-text-big {
-    @apply text-base;
-    @apply md:text-lg;
-}
-
-.m-text-bigger-big {
-    @apply text-base;
-    @apply md:text-lg;
-    @apply lg:text-xl;
-}
-
-.m-text-bigger {
+    @apply lg:text-2xl;
     @apply text-lg;
-    @apply md:text-xl
-}
-
-.m-text-biggest {
-    @apply text-lg;
-    @apply md:text-2xl;
 }
 
 .m-text-extra-bigger {
