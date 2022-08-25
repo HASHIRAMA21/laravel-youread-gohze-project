@@ -11,9 +11,9 @@
             <hr class="first-hr">
         </div>
         <!-- projets  non acheves -->
-        <div class="flex mt-8  w-full">
+        <div class="flex mt-8  w-full justify-center">
             <div class="grid lg:grid-cols-2">
-                <div class="mt-7 ml-11" v-for="(projet, index) in projetsNonAchieved" :key="index">
+                <div class="mt-7 lg:ml-11" v-for="(projet, index) in projetsNonAchieved" :key="index">
                     <projet :name="projet.name" :description="projet.description" :isAchieved="projet.isAchieved"
                         :iconeBag="projet.iconeBag" :iconePeople="projet.iconePeople" :nbAuthor="projet.nbAuthor"
                         :nbCriticize="projet.nbCriticize" :searchProfil="projet.searchProfil" />
@@ -40,9 +40,9 @@
             <hr class="first-hr">
         </div>
         <!-- projets acheves -->
-        <div class="flex mt-8  w-full ">
+        <div class="flex mt-8  w-full justify-center">
             <div class="grid lg:grid-cols-2">
-                <div class="flex mt-7 ml-11" v-for="(projet, index) in projetsAchieved" :key="index">
+                <div class="flex mt-7 lg:ml-11" v-for="(projet, index) in projetsAchieved" :key="index">
                     <projet :name="projet.name" :description="projet.description" :isAchieved="projet.isAchieved"
                         :iconeBag="projet.iconeBag" :iconePeople="projet.iconePeople" :nbAuthor="projet.nbAuthor"
                         :nbCriticize="projet.nbCriticize" :searchProfil="projet.searchProfil" />
@@ -51,7 +51,7 @@
                 </div> -->
                 </div>
             </div>
-            <div class="flex">
+            <div class="flex disappear">
                 <div>
                     <figure class="circle-md bg-indigo-light mt-44 ml-2.5"></figure>
                 </div>
@@ -66,6 +66,11 @@
     </div>
 </template>
 <style scoped>
+@media only screen and (max-width: 1024px) {
+  .disappear {
+    display: none;
+  }
+}
 .container {
     width: 1200px;
     margin: auto;
