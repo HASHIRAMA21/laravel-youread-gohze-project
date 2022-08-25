@@ -1,15 +1,16 @@
 <template>
     <div class="container pt-20">
         <div>
-            <p class="uppercase text-indigo font-bold text-xl">liste des projets</p>
+        <div class="lg:m-0 m-auto-resp lg:text-left lg:w-full ">
+            <p class="uppercase text-indigo font-bold m-text-bigger">liste des projets</p>
         </div>
         <div>
             <figure class="float-right bg-indigo circle-md mr-6"></figure>
         </div>
-        <div>
-            <p class="uppercase text-xs pt-12"> non acheves</p>
-            <hr class="first-hr">
-        </div>
+        <div class=" m-auto-resp lg:w-full">
+            <p class="uppercase text-xs md:pt-12 pt-4"> non acheve(s)</p>
+            <hr class="first-hr mt-2">
+        </div></div>
         <!-- projets  non acheves -->
         <div class="flex mt-8  w-full justify-center">
             <div class="grid lg:grid-cols-2">
@@ -22,7 +23,7 @@
                 </div> -->
                 </div>
             </div>
-            <div class="flex">
+            <div class="flex disappear">
                 <div>
                     <figure class="circle-md bg-indigo-light mt-44 ml-2.5"></figure>
                 </div>
@@ -36,8 +37,8 @@
         </div>
 
         <div>
-            <p class="uppercase text-xs pt-12"> acheves</p>
-            <hr class="first-hr">
+            <p class="uppercase text-xs pt-12"> acheve(s)</p>
+            <hr class="first-hr mt-2">
         </div>
         <!-- projets acheves -->
         <div class="flex mt-8  w-full justify-center">
@@ -66,19 +67,40 @@
     </div>
 </template>
 <style scoped>
-@media only screen and (max-width: 1024px) {
-  .disappear {
-    display: none;
-  }
+
+
+
+.first-hr {
+    border: 1px solid #202020;
 }
+@media screen and (max-width: 640px) {
+   .m-auto-resp{
+    width: 312px; 
+    margin-left: 3%;
+} 
 .container {
+    width: 340px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+}
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+   .m-auto-resp{
+    margin: auto;
+    max-width: 672px; 
+} 
+.container {
+    width: 400px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+}
+@media screen and (min-width: 1024px) {
+    .container {
     width: 1200px;
     margin: auto;
     margin-bottom: 100px;
 }
-
-.first-hr {
-    border: 1px solid #202020;
 }
 </style>
 <script>
