@@ -79,16 +79,14 @@ input{outline: none;}
 .fakediv i{
     top: 14px;
 }
-@media screen and (max-width: 950px) {
+
+@media screen and (max-width: 900px) {
 .settingbloc{
     width: 400px;
 }
+div.ml-5.w-full{@apply ml-0;}
 }
-@media screen and (max-width: 650px) {
-.settingbloc{
-    width: fit-content;
-}
-}
+
 @media screen and (max-width: 430px) {
 .w-full{
     width: inherit;

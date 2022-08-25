@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        CONTENU INDEX SETTINGS
+        
     </div>
 </template>
 <script>
