@@ -7,6 +7,9 @@ body{
   background-color: #FEFEFE;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.hide{
+  display: none;
+}
 .bg-vertbleu{
     background-color: var(--vertbleu);
 }
@@ -33,4 +36,14 @@ input[type="checkbox"]{
 .page-enter,
 .page-leave-to {
   opacity: 0;
+}
+
+/* Transitions d'apparition/disparition d'éléments */
+.slide-enter-active, .slide-leave-active {
+  transition: all 1s ease;
+}
+
+.slide-enter,
+.slide-leave-active {
+  transform: translateX(-300px); opacity: 0;
 }

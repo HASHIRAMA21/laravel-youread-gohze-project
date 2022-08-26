@@ -1,6 +1,6 @@
 <template>
 <div class="personalInfo">
-        <div class="ml-5 border-b border-gray-200 w-full">
+    <div class="ml-5 border-b border-gray-200 w-full">
         <div class="flex justify-end place-items-center h-28 settingbloc">
             <img src="~/assets/img/settings/profile-pic.png" alt="profile pic" class="w-20 mr-6">
             <button class="border border-black bg-white py-1 px-4 mx-3">Delete</button>
