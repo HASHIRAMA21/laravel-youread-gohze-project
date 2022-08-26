@@ -1,6 +1,6 @@
 <template>
     
-     <div class="col flex content-center px-8 py-14 gap-10 coul" >
+     <div class="flex content-center px-8 py-14 gap-10 coul" >
 
         <div class="my-auto mr-52 position" > 
            
@@ -103,7 +103,12 @@
 <script>
 import { Form, Field } from 'vee-validate';
 
+definePageMeta({
+  layout:false
+});
+
 export default {
+
   components: {
     Form,
     Field,
@@ -124,6 +129,9 @@ export default {
 </script>
 
 <style scoped>
+.coul{
+   background-color:white;
+}
 
 @media screen and (max-width: 430px){
         .position{

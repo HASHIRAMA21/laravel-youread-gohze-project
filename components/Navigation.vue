@@ -1,19 +1,23 @@
 <template>
 
     <div class="flex justify-between"> 
-        <div class="flex  content-center gap-10 px-5  item-center ">
-             <p >  <img src="./../assets/img/Navigation-images/im6.PNG" alt="photos"> </p>
-              <button class="py-5" > ACCEUIL  </button>
-             <button class="py-5"  v-click-outside.prevent="cachecatalogue" @click="affiche"  > CATALOGUE </button>
+        <div class="flex  content-center gap-10 px-5  item-center element-nav">
+            <p class="emplacement-icone fa-2x my-auto"> <i @click="affichemenumobile" v-click-outside.prevent="cachemenumobile" class="fa-solid fa-bars"></i> </p>
+            <!-- <Menu v-if="position" @menuprojetmobile="menuprojetmobile" />  -->
+             <!-- <button class="py-5"  v-click-outside.prevent="cachecatalogue" @click="affiche"  > CATALOGUE </button> -->
+             <p class="my-auto">  <img src="./../assets/img/Navigation-images/im6.PNG" alt="photos"> </p>
              
-             <button  class="py-5" @click="menuprojet" v-click-outside.prevent="cachemenuprojet" > PROJECT  </button>
-             <button class="py-5"> ANNONCES</button>
+              <button class="py-5 emplacement" > ACCEUIL  </button>
+             <button class="py-5"  v-click-outside.prevent="cachecatalogue" @click="affiche"  > CATALOGUE </button>
+             <!-- <p class="my-auto emplacement-icone">  <img src="./../assets/img/Navigation-images/im6.PNG" alt="photos"> </p> -->
+             <button  class="py-5 emplacement" @click="menuprojet" v-click-outside.prevent="cachemenuprojet" > PROJECT  </button>
+             <button class="py-5 emplacement"> ANNONCES</button>
 
         </div>
 
-        <div class="flex px-5 gap-10"> 
-            <p class="my-auto"> <i class="  fa-solid fa-2x fa-magnifying-glass"></i> </p>
-            <p> <button to="" @click="montreparametre" v-click-outside.prevent="closeparametre"  >  <img src="./../assets/img/Navigation-images/im29.PNG" alt="">  </button></p>
+        <div class="flex  px-5 gap-10 element-nav"> 
+            <p class="my-auto"> <i class="  fa-solid fa-magnifying-glass"></i> </p>
+            <p class="my-auto mx-auto"> <button to="" @click="montreparametre" v-click-outside.prevent="closeparametre"  >  <img src="./../assets/img/Navigation-images/im29.PNG" alt="">  </button></p>
 
         </div>
 
@@ -28,7 +32,8 @@ export default {
 name:'Navigation',
 data(){
     return {    
-        etat:false
+        etat:false,
+        position:false
     }
 },
 methods:{
@@ -51,48 +56,47 @@ methods:{
     },
     closeparametre(){
       this.$emit('closeparametre');
-    }
+    },
+    menuprojetmobile(){
+        this.etat=!this.etat
+    },
 
-},
-directives: { 
-  'click-outside': {
-  bind: function (el, binding, vnode) {
-    el.eventSetDrag = function () {
-      el.setAttribute('data-dragging', 'yes');
-    }
-    el.eventClearDrag = function () {
-      el.removeAttribute('data-dragging');
-    }
-    el.eventOnClick = function (event) {
-      var dragging = el.getAttribute('data-dragging');
-      // Check that the click was outside the el and its children, and wasn't a drag
-      if (!(el == event.target || el.contains(event.target)) && !dragging) {
-        // call method provided in attribute value
-         console.log('directive lancée')
-        vnode.context[binding.expression](event);
-      }
-    };
-    document.addEventListener('touchstart', el.eventClearDrag);
-    document.addEventListener('touchmove', el.eventSetDrag);
-    document.addEventListener('click', el.eventOnClick);
-    document.addEventListener('touchend', el.eventOnClick);
-  }, unbind: function (el) {
-    document.removeEventListener('touchstart', el.eventClearDrag);
-    document.removeEventListener('touchmove', el.eventSetDrag);
-    document.removeEventListener('click', el.eventOnClick);
-    document.removeEventListener('touchend', el.eventOnClick);
-    el.removeAttribute('data-dragging');
-  },
-  
-}
+    affichemenumobile(){
+        this.$emit('affichemenumobile');
+        console.log('yo bro');
 
+    },
+
+    cachemenumobile(){
+        this.$emit('cachemenumobile');
+    }
 
 }
 
 }
+
+
 </script>
 
 <style> 
 
+.emplacement-icone{
+    display: none;
+}
+
+@media screen and (max-width: 430px){
+
+.emplacement{
+    display:none;
+}
+.emplacement-icone{
+    display: flex;
+}
+.element-nav{
+    padding: 0px  6px;
+    
+}
+  
+}
 
 </style>

@@ -87,6 +87,10 @@
 <script>
 import { Form, Field } from 'vee-validate';
 
+definePageMeta({
+  layout:false
+});
+
 export default {
   components: {
     Form,
@@ -106,7 +110,7 @@ export default {
 };
 </script>
 
-<style> 
+<style scoped> 
     
     .coul{
        background-color:#FFFAF1; 

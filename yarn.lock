@@ -5065,6 +5065,11 @@ vue-router@^4.1.3:
   dependencies:
     "@vue/devtools-api" "^6.1.4"
 
+vue3-carousel@^0.1.46:
+  version "0.1.46"
+  resolved "https://registry.yarnpkg.com/vue3-carousel/-/vue3-carousel-0.1.46.tgz#173ede857f7e6321f2acd7cb4de384436c690b33"
+  integrity sha512-bBZRpt5vuaS3SYkyt3pF5N+VWTKrDlYeNnLKKwePcrGu77AKqZjofFR113tZi4aFF7rblvk8WqFdBWTNX+yZcg==
+
 vue3-toggle-button@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/vue3-toggle-button/-/vue3-toggle-button-1.0.3.tgz#3521a20afe3655ed62b284ba20ee0bce39e71b5b"
