@@ -48,6 +48,11 @@
     width: 8px;
     height: 8px;
 }
+
+.m-text-extrasmall{
+    @apply text-sm;
+    @apply md:text-xs;
+}
 .m-text-small {
     @apply text-base;
     @apply md:text-sm;

@@ -1,0 +1,448 @@
+<template>
+  <div>
+    
+    <div class="lg:flex mb-20 container mt-20">
+      <div>
+        <div class="first-container">
+          <p class="uppercase text-indigo font-bold text-xl leading-7">
+            creer votre projet sur youread
+          </p>
+          <p class="m-text-normal leading-4 text-gray ml-3 mt-1.5">
+            <span class="block"
+              >creez votre projet et collaborez avec d'autres </span
+            >utilisateurs pour produire une oeuvre innovante
+          </p>
+        </div>
+        <div class="content-img mt-12 disappear-lg">
+          <img
+            src="../../assets/img/ajoutprojet/Business thinking.png"
+            class=""
+          />
+        </div>
+        <div class="mt-24 ml-28 disappear-lg">
+          <figure class="bg-indigo circle-md"></figure>
+        </div>
+        <div class="mt-14 ml-64 disappear-lg">
+          <figure class="bg-orange circle-xl"></figure>
+        </div>
+        <div class="mt-24 ml-24 disappear-lg">
+          <figure class="bg-indigo-light circle-xl"></figure>
+        </div>
+      </div>
+      <div class="rounded-lg shadow-card mt-14 sm:ml-11">
+        <!-- <ValidationObserver ref="form" v-slot="{ passes }"> -->
+        <Form  v-slot="{ errors }">
+          <div class="grid">
+            <p class="uppercase text-indigo font-bold mt-5">
+              informations du projet
+            </p>
+            <p class="m-text-extrasmall mt-1">
+              remplissez les informations pour la creation de votre compte
+            </p>
+          </div>
+          <!-- <ValidationProvider v-slot="{ errors }" name="titre" rules="required"> -->
+          <div>
+            <label class="block uppercase text-xs mt-6">titre du projet</label>
+            <Field :rules="isRequired" :class="{error_input: errors.titre}"
+                
+              v-model="titre"
+              id="titre"
+              name="titre"
+              class="
+                input-xl
+                mt-0.5
+                appearance-none
+                block
+                w-full
+                border border-gray-200
+                rounded-lg
+                pl-4
+                focus:outline-none focus:bg-white
+              "
+              type="text"
+              placeholder="EXEMPLE PROJET"
+            />
+            <span class="error"> {{ errors.titre }} </span>
+          </div>
+          <!-- </ValidationProvider> -->
+          <div class="mt-2.5 text-xs sm:flex input-xl">
+            <!-- <ValidationProvider v-slot="{ errors }" name="nbCollaborateur" rules="required"> -->
+            <div class="w-full ">
+              <label class="block uppercase" for="nombre">
+                nombre de collaborateur
+              </label>
+              <Field :rules="isRequired" :class="{error_input: errors.nbCollaborateur}"
+               
+                name="nbCollaborateur"
+                class="
+                  input-lg
+                  text-xs
+                  mt-0.5
+                  appearance-none
+                  block
+                  w-full
+                  border-gray-200
+                  text-gray-700
+                  border
+                  rounded-lg
+                  pl-4
+                  focus:outline-none focus:bg-white
+                "
+                type="number"
+                placeholder="EX: 2"
+              />
+              <span class="error">{{ errors.nbCollaborateur }} </span>
+            </div>
+            <!-- </ValidationProvider>
+                            <ValidationProvider v-slot="{ errors }" name="profil" rules="required"> -->
+            <div class="mt-10-sm w-full sm:ml-7">
+              <label class="block uppercase" for="profil">
+                profils recherches
+              </label>
+
+              <div>
+               
+                  <Multiselect
+                  v-model="value"
+                  mode="multiple"
+                  :options="options"
+                  :createTag="true"
+                 
+                  placeholder="SELECT PROFIL"
+                  label="name"
+                  track-by="name"
+                  class="
+                    input-lg input
+                    text-xs
+                    mt-0.5
+                    focus:outline-none focus:bg-white
+                    appearance-none
+                    block
+                    w-full
+                    border-gray-200
+                    text-gray-700
+                    border
+                    rounded-lg
+                  "
+    >
+      <template v-slot:multipleLabel="{ values }">
+        <div class="multiselect-multiple-label text-xs">
+          {{ values.length }} profils selected
+        </div>
+      </template>
+    </Multiselect>
+                
+              </div>
+              <span class="error"> </span>
+            </div>
+            <!-- </ValidationProvider> -->
+          </div>
+          <div class="mt-2.5 sm:flex input-xl">
+            <!-- <ValidationProvider v-slot="{ errors }" name="theme" rules="required"> -->
+            <div class="w-full w-1/2">
+              <label class="block uppercase text-xs" for="nombre">
+                theme
+              </label>
+              <Field :rules="isRequired" :class="{error_input: errors.theme}"
+                name="theme"
+                v-model="theme"
+                class="
+                  block
+                  input-lg
+                  mt-0.5
+                  appearance-none
+                  block
+                  w-full
+                  border-gray-200
+                  text-gray-700
+                  border
+                  rounded-lg
+                  pl-4
+                  focus:outline-none focus:bg-white
+                "
+                type="text"
+                placeholder="AMOUR"
+              />
+              <span class="error">{{ errors.theme}} </span>
+            </div>
+            <!-- </ValidationProvider>
+                            <ValidationProvider v-slot="{ errors }" name="langue" rules="required"> -->
+            <div class="mt-10-sm w-full sm:ml-7">
+              <label class="block uppercase text-xs" for="profil">
+                langue
+              </label>
+              
+                <Multiselect
+                    v-model="langue"
+                   name="langue"
+                   placeholder="select language"
+                class="
+                  block
+                  mt-0.5
+                  text-xs
+                  uppercase
+                  input-lg
+                  text-gray-700
+                  border border-gray-200
+                  pl-4
+                  rounded-lg
+                  focus:bg-white focus:outline-none
+                "
+                    :options="langues"
+                    :rules="isRequired"
+                    :class="{error_input: errors.langue}"
+                />
+              <span class="error">{{ errors.langue }}</span>
+            </div>
+            <!-- </ValidationProvider> -->
+          </div>
+          <!-- <ValidationProvider v-slot="{ errors }" name="description" rules="required"> -->
+          <div class="mt-2.5">
+            <label class="block uppercase text-xs" for="profil">
+              Description
+            </label>
+            <Field :rules="isRequired" :class="{error_input: errors.description}"
+              name="description"
+              v-model="description"
+              class="
+                mt-0.5
+                appearance-none
+                block
+                input-xl
+                long-input
+                border border-gray-200
+                rounded-lg
+                pl-4
+                sm:pb-60 pb-40
+                focus:outline-none focus:bg-white
+              "
+              type="text"
+              lg:placeholder="DESCRIPTION DU PROJET"
+            />
+            <span class="error">{{ errors.description}}</span>
+          </div>
+          <!-- </ValidationProvider> -->
+          <button
+            class="
+              bg-indigo
+              float-right
+              w-24
+              h-9
+              mt-8
+              font-bold
+              text-white
+              rounded-lg
+              focus:outline-none
+            "
+            type="submit"
+          >
+            CREATE
+          </button>
+        </Form>
+        <!-- </ValidationObserver> -->
+      </div>
+      <div class="ml-16 disappear-lg">
+        <div class="mt-8">
+          <figure class="circle-md bg-indigo"></figure>
+        </div>
+        <div class="ml-20 mt-28">
+          <figure class="circle-lg bg-orange"></figure>
+        </div>
+        <div class="mt-36 ml-10">
+          <figure class="circle-md bg-indigo-light"></figure>
+        </div>
+        <div class="ml-24 mt-40">
+          <figure class="circle-sm bg-indigo-light"></figure>
+        </div>
+        <div class="mt-52 ml-20">
+          <figure class="circle-xxl bg-indigo"></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<style scoped>
+@media screen and (max-width: 640px) {
+  .shadow-card{
+    width: 312px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .input-lg{
+    width: 270px;
+  }
+input,
+select,
+.input {
+  background-color: #f9fafb;
+  height: 39px;
+  width: 270px;
+}
+.mt-10-sm{
+  margin-top: 10px;
+}
+.shadow-card {
+  box-shadow: 0px 2px 10px 0px #00000040;
+  min-height: 720px;
+}
+.first-container{
+  text-align: center;
+}
+}
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+  .first-container{
+  width: 502px;
+  padding-left: 50px;
+}
+}
+@media screen and (max-width: 1023px) {
+  .disappear-lg{
+    display: none;
+}
+
+
+}
+
+.container-select {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+  margin: 80px auto 30px;
+}
+
+input::placeholder,
+select::placeholder {
+  font-size: 12px;
+}
+
+.container {
+  margin: auto;
+  margin-bottom: 100px;
+  /* justify-content: center; */ 
+}
+
+button {
+  margin-right: 3px;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  border: 2px solid #007d74;
+  background-color: white;
+  color: #007d74;
+}
+
+form {
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+/* 
+.shadow-card {
+  box-shadow: 0px 2px 10px 0px #00000040;
+  min-height: 695px;
+} */
+@media screen and (min-width: 641px) {
+.input-xl {
+  width: 429px;
+}
+.input-lg {
+  width: 200px;
+}
+.shadow-card {
+  box-shadow: 0px 2px 10px 0px #00000040;
+  width: 502px;
+  min-height: 695px;
+}
+.long-input {
+  height: 276px !important;
+}
+input,
+select,
+.input {
+  background-color: #f9fafb;
+  height: 39px;
+}
+.shadow-card {
+  box-shadow: 0px 2px 10px 0px #00000040;
+  min-height: 695px;
+}
+}
+
+
+
+
+input:focus-within,
+textarea:focus-within,
+select:focus-within,
+.input:focus-within {
+  border: 2px solid #007d74;
+}
+
+.form {
+  margin: auto;
+}
+
+
+
+.test {
+  position: absolute;
+}
+
+.text-gray {
+  color: #7e7e7e;
+}
+
+.content-img {
+  width: 434px;
+  height: 234px;
+}
+
+.content-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+</style>
+<style src="@vueform/multiselect/themes/default.css"></style>
+<script>
+
+// import { ValidationObserver, ValidationProvider } from "vee-validate";
+
+import Multiselect from '@vueform/multiselect'
+import { Form, Field } from "vee-validate";
+export default {
+  name: "ajoutProjet",
+  components: {
+    Form,
+    Field,
+    Multiselect,
+  },
+  data() {
+    return {
+      langue: "francais",
+      titre:"",
+      theme:"",
+      description:"",
+      value: null,
+        options: [
+          'Batman',
+          'Robin',
+          'Joker',
+        ],
+        langues: ['francais', 'anglais']
+      // schema
+    };
+  },
+
+ methods: {
+    // Validator function
+    isRequired(value) {
+      return value ? true : 'This field is required';
+    },
+  },
+};
+</script>
