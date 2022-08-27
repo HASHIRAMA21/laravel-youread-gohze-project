@@ -34,10 +34,10 @@
             <div v-for="(chap , index) in chapitres" :key="index">
                 <chapitre :nom="chap.nom" :numero="index+1" :dateCreation="chap.dateCreation" :statut="chap.statut" />
                 <div class="mt-5"><hr></div>
-                <p> <i class="fa-brands fa-2x fa-twitter"></i></p>
+                 <icon-ps />
             </div>
         </div>
-         <p> <i class="fa-brands fa-2x fa-twitter"></i></p>
+          
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@ button {
 </style>
 <script>
 import chapitre from '../../components/annonce.vue'
-
+import IconPs from '~icons/ri/playstation-line'
 export default {
     name:"listChapitres",
     components:{
