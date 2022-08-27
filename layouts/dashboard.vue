@@ -1,14 +1,16 @@
 <template>
-  <div class="grid relative" :class="sideBarVisible ? '' : 'grid-phone'">
+  <div class="grid relative bg-grisbleu"
+   :class="sideBarVisible ? '' : 'grid-phone'">
 
     <SideBarDashboard class="typeNormal" v-if="sideBarVisible" />
 
     <transition name="slide">
-      <SideBarDashboard class="typePhone absolute hide" v-if="sideBarPhoneVisible" 
+      <SideBarDashboard class="typePhone z-20 absolute hide" v-if="sideBarPhoneVisible" 
         v-click-outside="closeSideBarPhone" />
     </transition>
 
-    <HeaderDashboard @toggleSideBar="toggleSideBar" @toggleSideBarPhone="toggleSideBarPhone" />
+    <HeaderDashboard @toggleSideBar="toggleSideBar" @toggleSideBarPhone="toggleSideBarPhone"
+    :sideBarVisible="sideBarVisible" class="z-10"/>
     <slot />
     <FooterDashboard />
 
@@ -44,7 +46,7 @@ export default {
 <style scoped>
 .grid {
   grid-template-columns: 240px 1fr;
-  grid-template-rows: 60px minmax(90vh, 1fr) 30px;
+  grid-template-rows: 60px minmax(90vh, 1fr) minmax(30px, max-content);
   grid-template-areas:
     "sidebar header"
     "sidebar content"
@@ -67,11 +69,9 @@ export default {
 }
 .headerDashboard {
   grid-area: header;
-  background-color: blanchedalmond;
 }
 .footerDashboard {
   grid-area: footer;
-  background-color: brown;
 }
 
 @media screen and (max-width: 900px) {

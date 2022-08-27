@@ -1,7 +1,9 @@
 :root {
     --vertbleu: #007D74;
-    --violet2: rgb(206, 181, 236);
-    --hauteur-header: 118px;
+    --beige: #FFF0D6;
+    --grisbleu: #E8F9F8;
+    --vertfonce: #148B77; --vertfonce2: #188E78;
+    --vertclair: #74CD86; --vertclair2: #6AC684;
 }
 body{
   background-color: #FEFEFE;
@@ -18,6 +20,25 @@ body{
 }
 .border-vertbleu{
     border-color: var(--vertbleu);
+}
+.bg-beige{
+  background-color: var(--beige);
+}
+.text-beige{
+  color: var(--beige);
+}
+.bg-grisbleu{
+  background-color: var(--grisbleu);
+}
+.text-grisbleu{
+  color: var(--grisbleu);
+}
+
+.gradient-vert{
+  background: linear-gradient(to right, var(--vertfonce) , var(--vertclair));
+}
+.gradient-vert2{
+  background: linear-gradient(to right, var(--vertfonce2) , var(--vertclair2));
 }
 
 .cercle{
