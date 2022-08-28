@@ -1,13 +1,10 @@
 <template>
-  <div>
+  <div class="dashboard-content-margin">
     <h1>VOICI LE CONTENU DU DASHBOARD !</h1>
   </div>
 </template>
 
 <script>
-definePageMeta({
-  layout: "dashboard",
-});
 
 export default {
   name: "DashbordIndex",

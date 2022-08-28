@@ -49,6 +49,13 @@ input[type="checkbox"]{
     accent-color: var(--vertbleu);
 }
 
+/* Styles spécifiques au dashboard */
+
+.dashboard-content-margin{ /* gère la marge gauche et droite du header et du contenu central du dashboard*/
+  @apply mx-2 sm:mx-3 md:mx-5;
+}
+
+
 /* Transitions lors d'un changement de route */
 .page-enter-active,
 .page-leave-active {

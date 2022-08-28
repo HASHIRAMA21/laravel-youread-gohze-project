@@ -1,6 +1,7 @@
 <template>
     <div class="headerDashboard relative flex justify-between place-items-center bg-white
-    pr-2 sm:pr-4 md:pr-8 pl-2 md:pl-4 mx-2 sm:mx-3 md:mx-5 mt-1 sm:mt-2 rounded-md">
+    pr-2 sm:pr-4 md:pr-8 pl-2 md:pl-4  mt-1 sm:mt-2 rounded-md
+    dashboard-content-margin">
       <div class="flex place-items-center">
         <i class="fa-solid text-xl md:text-2xl" :class="sideBarVisible? 'fa-xmark' : 'fa-bars'"
         :title="sideBarVisible? 'Masquer le menu' : 'Afficher le menu'"

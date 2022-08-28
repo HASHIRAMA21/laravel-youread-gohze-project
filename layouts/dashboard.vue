@@ -6,12 +6,14 @@
 
     <transition name="slide">
       <SideBarDashboard class="typePhone z-20 absolute hide" v-if="sideBarPhoneVisible" 
-        v-click-outside="closeSideBarPhone" />
+        v-click-outside="closeSideBarPhone" @click-outside="closeSideBarPhone" />
     </transition>
 
     <HeaderDashboard @toggleSideBar="toggleSideBar" @toggleSideBarPhone="toggleSideBarPhone"
     :sideBarVisible="sideBarVisible" class="z-10"/>
-    <slot />
+    <div class="pageContent">
+      <slot />
+    </div>
     <FooterDashboard />
 
   </div>
@@ -61,14 +63,16 @@ export default {
     "footer footer";
 }
 
-.sideBarDashboard.typePhone{background-color: rgb(228, 243, 13); width: 240px; height: 100%;}
+.sideBarDashboard.typePhone{width: 240px; height: 100%;}
 
 .sideBarDashboard.typeNormal {
   grid-area: sidebar;
-  background-color: rgb(159, 219, 174);
 }
 .headerDashboard {
   grid-area: header;
+}
+.pageContent {
+  grid-area: content;
 }
 .footerDashboard {
   grid-area: footer;
