@@ -5,12 +5,12 @@
     <SideBarDashboard class="typeNormal" v-if="sideBarVisible" />
 
     <transition name="slide">
-      <SideBarDashboard class="typePhone z-20 absolute hide" v-if="sideBarPhoneVisible" 
+      <SideBarDashboard class="typePhone z-50 absolute hide" v-if="sideBarPhoneVisible" 
         v-click-outside="closeSideBarPhone" @click-outside="closeSideBarPhone" />
     </transition>
 
     <HeaderDashboard @toggleSideBar="toggleSideBar" @toggleSideBarPhone="toggleSideBarPhone"
-    :sideBarVisible="sideBarVisible" class="z-10"/>
+    :sideBarVisible="sideBarVisible" class="z-40"/>
     <div class="pageContent">
       <slot />
     </div>

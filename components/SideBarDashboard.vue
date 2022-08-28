@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="sideBarDashboard flex justify-center bg-white">
+    <div class="sideBarDashboard flex justify-center bg-white overflow-auto">
       <div class="flex flex-col py-5">
         <div class="flex justify-center">
           <img src="~/assets/img/hibou-logo.png" alt="hibou-logo" class="h-10 md:h-12">

@@ -49,6 +49,17 @@ input[type="checkbox"]{
     accent-color: var(--vertbleu);
 }
 
+@media screen and (max-width: 800px) {
+  .nonPermanent2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .nonPermanent {
+    display: none;
+  }
+}
+
 /* Styles spécifiques au dashboard */
 
 .dashboard-content-margin{ /* gère la marge gauche et droite du header et du contenu central du dashboard*/
