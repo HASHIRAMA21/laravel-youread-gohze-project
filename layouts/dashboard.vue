@@ -13,6 +13,11 @@
     .app-background{
         background-color: #E6FFFE;
     }
+    /* @media (max-width: 768px) {
+      .app-background{
+        width: 1200px;
+    }
+    } */
 </style>
 <script>
 </script>

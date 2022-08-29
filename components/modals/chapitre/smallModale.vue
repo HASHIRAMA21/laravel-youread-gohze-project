@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-fade">
     <div
-      class="bloc-modale flex fixed z-10 justify-center items-center"
+      class="bloc-modale flex fixed z-10 justify-center "
       v-if="showModal"
     >
       <div class="overlay" v-on:click="toggleModale"></div>
@@ -57,6 +57,7 @@ export default {
   transition: opacity 0.5s ease;
 }
 .bloc-modale {
+  margin-top: 20%;
   top: 0;
   bottom: 0;
   left: 0;

@@ -9,7 +9,7 @@
         <span class="text-indigo">Projets / </span><span>Chapitres</span>
       </p>
     </div>
-    <div class="container m-auto ng-white">
+    <div class="container m-auto bg-white">
       <div class="ml-9">
         <button class="text-white m-text-small mt-10 button-add relative" v-on:click="toggleModaleAdd">
           <img
@@ -72,7 +72,7 @@
     margin-left: 81%;
   }
   .title{
-    padding-left: 30px;
+    padding-left: 6%;
   }
 }
 .container {
@@ -96,10 +96,9 @@ button {
 <script>
 definePageMeta({ layout: 'dashboard' })
 import chapitre from "../../components/chapitre.vue";
-import modaleAdd from "../../components/modaleAdd.vue"
+import modaleAdd from "../../components/modals/chapitre/modaleAdd.vue"
 
 export default {
-  layout: 'dashboard',
   name: "listChapitres",
   components: {
     chapitre,
