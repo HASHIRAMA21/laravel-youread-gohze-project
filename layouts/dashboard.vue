@@ -1,6 +1,6 @@
 <template>
   <div class="grid relative bg-grisbleu"
-   :class="sideBarVisible ? '' : 'grid-phone'">
+   :class="sideBarVisible ? 'grid-normal' : 'grid-phone'">
 
     <SideBarDashboard class="typeNormal" v-if="sideBarVisible" />
 
@@ -49,6 +49,9 @@ export default {
 .grid {
   grid-template-columns: 240px 1fr;
   grid-template-rows: 60px minmax(90vh, 1fr) minmax(30px, max-content);
+}
+
+.grid-normal{
   grid-template-areas:
     "sidebar header"
     "sidebar content"

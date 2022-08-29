@@ -7,7 +7,7 @@
             </div>
             <div class="flex flex-col px-3 md:px-4 lg:px-7 text-indigo">
                 <div class="py-1">Juillet 2022</div>
-                <div class="flex justify-between">
+                <div class="jours flex justify-between">
                 <BoxDate v-for="(jour, index) in jours" :key="index" 
                     :nom="jour.nom" :numero="jour.numero" :thisDay="jour.thisDay" />
                 </div>
@@ -18,7 +18,7 @@
             <div class="px-3 py-1">
                 Jours de la semaine
             </div>
-            <div class="flex justify-between px-3 md:px-4 lg:px-7 overflow-auto text-indigo">
+            <div class="jours flex justify-between px-3 md:px-4 lg:px-7 overflow-auto text-indigo">
             <BoxDate v-for="(jour, index) in jours" :key="index" 
                 :nom="jour.nom" :numero="jour.numero" :thisDay="jour.thisDay" />
             </div>
@@ -36,7 +36,7 @@ export default {
       {nom: 'Mar', numero: '06', thisDay: false},
       {nom: 'Mer', numero: '07', thisDay: false},
       {nom: 'Jeu', numero: '08', thisDay: false},
-      {nom: 'Ven', numero: '09', thisDay: false},
+      {nom: 'Ven', numero: '09', thisDay: false}
     ]);
 
     return { jours };
@@ -45,6 +45,7 @@ export default {
 </script>
 
 <style scoped>
+/* .jours{max-width: 90vw;} */
 @media screen and (min-width: 640px) {
   .date-card {
     @apply mx-2 sm:mx-3 md:mx-5 rounded-md;
