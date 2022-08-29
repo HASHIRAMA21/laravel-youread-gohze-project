@@ -17,7 +17,7 @@
                             <td>{{file.libelle}}</td>
                             <td>{{file.dateCreation}}</td>
                             <td>{{file.dateModif}}</td>
-                            <td class="images"><ProjectMembers :showText="false" :imgWidth="36" :decalage="9" /></td>
+                            <td class="images"><ProjectMembers :showText="false" :imgWidth="'36'" :decalage="9" /></td>
                         </tr>
                     </tbody>
                 </table>

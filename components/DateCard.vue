@@ -44,8 +44,13 @@ export default {
 };
 </script>
 
-<style scoped>
-/* .jours{max-width: 90vw;} */
+<style lang="scss" scoped>
+@use "~/assets/css/variables.scss" as v;
+
+@media screen and (min-width: v.$dashboard-switch) {
+div.sideBarVisible .date-card{max-width: calc(100vw - var(--sidebar-width) - 60px);}
+}
+
 @media screen and (min-width: 640px) {
   .date-card {
     @apply mx-2 sm:mx-3 md:mx-5 rounded-md;
@@ -56,6 +61,7 @@ export default {
   .date-card {display: flex;}
   .date-card-phone {display: none;}
 }
+
 @media screen and (max-width: 800px) {
   .date-card {display: none;}
   .date-card-phone {display: flex;}

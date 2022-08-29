@@ -1,21 +1,39 @@
 <template>
-  <div class="grid relative bg-grisbleu"
-   :class="sideBarVisible ? 'grid-normal' : 'grid-phone'">
-
-    <SideBarDashboard class="typeNormal" v-if="sideBarVisible" />
-
-    <transition name="slide">
-      <SideBarDashboard class="typePhone z-50 absolute hide" v-if="sideBarPhoneVisible" 
-        v-click-outside="closeSideBarPhone" @click-outside="closeSideBarPhone" />
-    </transition>
-
-    <HeaderDashboard @toggleSideBar="toggleSideBar" @toggleSideBarPhone="toggleSideBarPhone"
-    :sideBarVisible="sideBarVisible" class="z-40"/>
-    <div class="pageContent">
-      <slot />
+  <div class="dashboard">
+    <div
+      class="grid headergrid w-full fixed top-0 right-0 z-40"
+      :class="sideBarVisible ? 'headergrid-normal' : 'headergrid-phone'"
+    >
+      <HeaderDashboard
+        @toggleSideBar="toggleSideBar"
+        @toggleSideBarPhone="toggleSideBarPhone"
+        :sideBarVisible="sideBarVisible"
+        class="z-40"
+      />
     </div>
-    <FooterDashboard />
+    <div
+      class="grid maingrid relative bg-grisbleu"
+      :class="sideBarVisible ? 'maingrid-normal' : 'maingrid-phone'"
+    >
+      <SideBarDashboard
+        class="typeNormal z-50 fixed top-0 left-0"
+        v-if="sideBarVisible"
+      />
 
+      <transition name="slide">
+        <SideBarDashboard
+          class="typePhone z-50 hide fixed top-0 left-0"
+          v-if="sideBarPhoneVisible"
+          v-click-outside="closeSideBarPhone"
+          @click-outside="closeSideBarPhone"
+        />
+      </transition>
+
+      <div class="pageContent" :class="sideBarVisible ? 'sideBarVisible' : ''">
+        <slot />
+      </div>
+      <FooterDashboard />
+    </div>
   </div>
 </template>
 
@@ -39,37 +57,62 @@ export default {
       sideBarPhoneVisible.value = false;
     }
 
-    return { sideBarVisible, sideBarPhoneVisible, toggleSideBar, toggleSideBarPhone,
-    closeSideBarPhone };
+    return {
+      sideBarVisible,
+      sideBarPhoneVisible,
+      toggleSideBar,
+      toggleSideBarPhone,
+      closeSideBarPhone,
+    };
   },
 };
 </script>
 
-<style scoped>
-.grid {
-  grid-template-columns: 240px 1fr;
-  grid-template-rows: 60px minmax(90vh, 1fr) minmax(30px, max-content);
+<style lang="scss" scoped>
+@use "~/assets/css/variables.scss" as v;
+
+.maingrid {
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: var(--header-height) minmax(90vh, 1fr) minmax(
+      30px,
+      max-content
+    );
+}
+.headergrid {
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: var(--header-height);
 }
 
-.grid-normal{
+.maingrid-normal {
   grid-template-areas:
-    "sidebar header"
+    "sidebar vide"
     "sidebar content"
-    "footer footer";
+    "sidebar footer";
+}
+.headergrid-normal {
+  grid-template-areas: "vide header";
 }
 
-.grid-phone {
+.maingrid-phone {
   /* Affichage sans la sidebar (lorsqu'on la masque ou que l'écran est petit) */
   grid-template-areas:
-    "header header"
+    "vide vide"
     "content content"
     "footer footer";
 }
-
-.sideBarDashboard.typePhone{width: 240px; height: 100%;}
+.headergrid-phone {
+  /* Affichage sans la sidebar (lorsqu'on la masque ou que l'écran est petit) */
+  grid-template-areas: "header header";
+}
+.sideBarDashboard.typePhone {
+  width: var(--sidebar-width);
+  height: 100vh;
+}
 
 .sideBarDashboard.typeNormal {
   grid-area: sidebar;
+  height: 100vh;
+  width: var(--sidebar-width);
 }
 .headerDashboard {
   grid-area: header;
@@ -81,13 +124,18 @@ export default {
   grid-area: footer;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: v.$dashboard-switch) {
   .sideBarDashboard.typeNormal {
     display: none;
   }
-  .sideBarDashboard.typePhone{display: flex;}
-  .grid {
-    @apply grid-phone;
+  .sideBarDashboard.typePhone {
+    display: flex;
+  }
+  .maingrid {
+    @apply maingrid-phone;
+  }
+  .headergrid {
+    @apply headergrid-phone;
   }
 }
 </style>

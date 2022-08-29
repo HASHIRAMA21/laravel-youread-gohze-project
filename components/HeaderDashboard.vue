@@ -48,11 +48,13 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@use "~/assets/css/variables.scss" as v;
+
 .headerDashboard{
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: v.$dashboard-switch) {
   #toggleSideBar{
   display: none;
 }
