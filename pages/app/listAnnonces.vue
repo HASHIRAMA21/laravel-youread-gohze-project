@@ -1,7 +1,10 @@
 <template>
   <div class="">
-    <div class="sm:hidden title-phone text-base grid">
-      <span class="m-auto">vous avez une nouvelle annonce</span>
+    <div class="sm:hidden title-phone text-base flex py-3">
+      <div class="ml-2">
+        <img src="../../assets/img/annonces/bell.png"/>
+      </div>
+      <div class="ml-2"><span>vous avez une nouvelle annonce</span></div>
     </div>
     <div class="flex mt-5 sm:mt-16 w-full justify-center">
       <div class="">
