@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 .text-gray{
     color: #5A5A5A;
 }
@@ -45,7 +45,7 @@
     width: 8px;
     height: 8px;
 }
-<<<<<<< HEAD
+
 .input-custom,
 .select-custom
 {
@@ -59,12 +59,8 @@
 .m-text-extrasmall{
     @apply text-sm;
     @apply md:text-xs;
-=======
-.m-text-extra-small{
-    @apply md:text-xs;
-    @apply text-sm
->>>>>>> a442f2495bb60e98372c31fb00b59ddb361eea3a
 }
+
 .m-text-small {
     @apply md:text-sm;
     @apply text-xs;
@@ -97,3 +93,10 @@
     font-weight: 500;
     font-size: 12px;
 }
+
+@media only screen and (max-width: 1024px) {
+    .disappear {
+      display: none;
+    }
+}
+
