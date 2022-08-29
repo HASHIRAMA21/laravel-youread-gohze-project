@@ -4,7 +4,7 @@
             <figure class="circle-md bg-indigo first-figure"></figure>
         </div>
         <div>
-            <p class="uppercase font-bold text-xl mt-1 title xl:ml-14 lg:ml-16  md:ml-28 sm:ml-16 ml-10">parcourir les categories</p>
+            <p class="uppercase font-bold text-xl mt-1 title xl:ml-14  md:ml-28 sm:ml-16 ml-10">parcourir les categories</p>
         </div>
         <div class="flex justify-center">
             <div class="grid xl:grid-cols-4 container-cat gap-4 lg:grid-cols-3 sm:grid-cols-2 button">
