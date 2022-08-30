@@ -1,0 +1,55 @@
+export default [
+    {
+        name: "Recherche d'un critique pour notre livre surnaturel",
+        imgUrl: "../assets/img/annonces/Ellipse 50.png",
+        nbCommentaire: 21,
+        title: "Creation d’un roman d’amour qui parlera des couples dans la ville de Yaoundé",
+        datePub: "Il y’a 2heures",
+        type: "Project Roman",
+        description: "Gon Freecss a douze ans, et rêve de devenir hunter (chasseur en anglais). Les hunters sont des citoyens d'élite autorisés à faire quasiment tout ce qu'ils souhaitent sur simple présentation de leur licence : ils peuvent ainsi acquérir gratuitement tout objet à la vente sur les fonds de",
+        nbCandidat: "7",
+        searchProfil: "Auteur/Critique",
+        nbAuteur: "3",
+        nbCritique: "2",
+        status: "ouvert"
+    },
+    {
+        name: "Recherche d'un critique pour notre livre surnaturel",
+        imgUrl: "../../assets/img/annonces/Ellipse 50.png",
+        nbCommentaire: 21,
+        datePub: "Il y’a 1heure",
+        type: "Project Roman",
+        description: "Gon Freecss a douze ans, et rêve de devenir hunter (chasseur en anglais). Les hunters sont des citoyens d'élite autorisés à faire quasiment tout ce qu'ils souhaitent sur simple présentation de leur licence : ils peuvent ainsi acquérir gratuitement tout objet à la vente sur les fonds de",
+        nbCandidat: "7",
+        searchProfil: "Auteur/Critique",
+        nbAuteur: "1",
+        nbCritique: "5",
+        status: "ouvert"
+    },
+    {
+        name: "Recherche d'un critique pour notre livre surnaturel",
+        imgUrl: "../../assets/img/annonces/Ellipse 51.png",
+        nbCommentaire: 21,
+        datePub: "Il y’a 3heures",
+        type: "Project Harlequin",
+        description: "Gon Freecss a douze ans, et rêve de devenir hunter (chasseur en anglais). Les hunters sont des citoyens d'élite autorisés à faire quasiment tout ce qu'ils souhaitent sur simple présentation de leur licence : ils peuvent ainsi acquérir gratuitement tout objet à la vente sur les fonds de",
+        nbCandidat: "1",
+        searchProfil: "Auteur/Critique",
+        nbAuteur: "2",
+        nbCritique: "2",
+        status: "ferme"
+    },
+    {
+        name: "Recherche d'un critique pour notre livre surnaturel",
+        imgUrl: "../../assets/img/annonces/Ellipse 52.png",
+        nbCommentaire: 21,
+        datePub: "Il y’a 4heures",
+        type: "Project Roman",
+        description: "Gon Freecss a douze ans, et rêve de devenir hunter (chasseur en anglais). Les hunters sont des citoyens d'élite autorisés à faire quasiment tout ce qu'ils souhaitent sur simple présentation de leur licence : ils peuvent ainsi acquérir gratuitement tout objet à la vente sur les fonds de",
+        nbCandidat: "7",
+        searchProfil: "Auteur/Critique : Femme",
+        nbAuteur: "3",
+        nbCritique: "2",
+        status: "ouvert"
+    },
+]

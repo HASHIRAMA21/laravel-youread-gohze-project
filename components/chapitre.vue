@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-5 mt-3.5">
+  <div class="sm:grid sm:grid-cols-5 mt-3.5">
     <div>{{ numero }}</div>
     <div>{{ nom }}</div>
     <div>{{ dateCreation }}</div>

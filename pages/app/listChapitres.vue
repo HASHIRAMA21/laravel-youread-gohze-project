@@ -11,7 +11,10 @@
     </div>
     <div class="container m-auto bg-white">
       <div class="ml-9">
-        <button class="text-white m-text-small mt-10 button-add relative" v-on:click="toggleModaleAdd">
+        <button
+          class="text-white m-text-small mt-10 button-add relative"
+          v-on:click="toggleModaleAdd"
+        >
           <img
             src="../../assets/img/listChapitres/Group.png"
             class="inline-block"
@@ -47,41 +50,70 @@
             <div class="mt-5"><hr /></div>
           </div>
         </div>
+        <!-- <table class="m-auto" v-if="chapitres.length > 0">
+          <thead>
+            <tr>
+              <td><span>Numero</span></td>
+              <td><span>Nom</span></td>
+              <td><span>Date creation</span></td>
+              <td><span>Statut</span></td>
+              <td><span>Action</span></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(chap, index) in chapitres" :key="index">
+              <td><chapitre :numero="chap.numero" /></td>
+              <td><chapitre :nom="chap.nom" /></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table> -->
         <div class="mt-10 px-40 font-bold" v-else>
           <p>Aucun chapitre pour le moment !</p>
         </div>
       </div>
     </div>
-    <modaleAdd :showModal="showModalAdd" :toggleModale="toggleModaleAdd"></modaleADd>
+    <modaleAdd
+      :showModal="showModalAdd"
+      :toggleModale="toggleModaleAdd"
+    ></modaleAdd>
   </div>
 </template>
 <style scoped>
 .button-add {
   margin-left: 85%;
 }
-@media screen and (max-width:1024px) {
-  .button-add{
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 707px;
+    /* background-color: red; */
+    overflow: auto;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .button-add {
     margin-left: 81%;
   }
-  .title{
+  .title {
     padding-left: 50px;
   }
 }
-@media screen and (max-width:640px) {
-  .button-add{
+@media screen and (max-width: 640px) {
+  .button-add {
     margin-left: 81%;
   }
-  .title{
+  .title {
     padding-left: 6%;
   }
 }
 .container {
   margin-top: 44px;
   min-height: 123px;
-  width: 1107px;
+
   border-radius: 10px;
   box-shadow: 0px 1px 10px rgba(28, 201, 189, 0.29);
   margin-bottom: 100px;
+  /* background-color: red; */
   /* margin: auto; */
 }
 button {
@@ -94,15 +126,15 @@ button {
     } */
 </style>
 <script>
-definePageMeta({ layout: 'dashboard' })
+definePageMeta({ layout: "dashboard" });
 import chapitre from "../../components/chapitre.vue";
-import modaleAdd from "../../components/modals/chapitre/modaleAdd.vue"
+import modaleAdd from "../../components/modals/chapitre/modaleAdd.vue";
 
 export default {
   name: "listChapitres",
   components: {
     chapitre,
-    modaleAdd
+    modaleAdd,
   },
 
   data() {
@@ -118,7 +150,7 @@ export default {
             del: "fa-solid fa-trash-can text-indigo",
             publish: "fa-solid fa-paper-plane text-indigo",
           },
-          type: "Roman"
+          type: "Roman",
         },
         {
           nom: "la colère d’Adam",
@@ -130,7 +162,7 @@ export default {
             del: "fa-solid fa-trash-can text-indigo",
             publish: "fa-solid fa-paper-plane text-indigo",
           },
-          type: "Roman"
+          type: "Roman",
         },
         {
           nom: "la colère d’Adam",
@@ -142,7 +174,7 @@ export default {
             del: "fa-solid fa-trash-can text-indigo",
             publish: "fa-solid fa-paper-plane text-indigo",
           },
-          type: "Roman"
+          type: "Roman",
         },
         {
           nom: "la colère d’Adam",
@@ -154,7 +186,7 @@ export default {
             del: "fa-solid fa-trash-can text-indigo",
             publish: "fa-solid fa-paper-plane text-indigo",
           },
-          type: "Roman"
+          type: "Roman",
         },
         {
           nom: "la colère d’Adam",
@@ -166,7 +198,7 @@ export default {
             del: "fa-solid fa-trash-can text-indigo",
             publish: "fa-solid fa-paper-plane text-indigo",
           },
-          type: "Roman"
+          type: "Roman",
         },
         {
           nom: "la colère d’Adam",
@@ -178,7 +210,7 @@ export default {
             del: "fa-solid fa-trash-can text-indigo",
             publish: "fa-solid fa-paper-plane text-indigo",
           },
-          type: "Roman"
+          type: "Roman",
         },
         {
           nom: "la colère d’Adam",
@@ -190,7 +222,7 @@ export default {
             del: "fa-solid fa-trash-can text-indigo",
             publish: "fa-solid fa-paper-plane text-indigo",
           },
-          type: "Roman"
+          type: "Roman",
         },
         {
           nom: "la colère d’Adam",
@@ -202,16 +234,16 @@ export default {
             del: "fa-solid fa-trash-can text-indigo",
             publish: "fa-solid fa-paper-plane text-indigo",
           },
-          type: "Roman"
+          type: "Roman",
         },
       ],
-      showModalAdd: false
+      showModalAdd: false,
     };
   },
   methods: {
-    toggleModaleAdd: function() {
-      this.showModalAdd= !this.showModalAdd;
-    }
+    toggleModaleAdd: function () {
+      this.showModalAdd = !this.showModalAdd;
+    },
   },
 };
 </script>

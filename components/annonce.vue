@@ -24,18 +24,24 @@
     font-weight: bold;
   }
 }
-/* .content{
-       /* margin: auto; */
-/* margin-left: 36px; */
-/* } */
 </style>
 <script>
 export default {
   name: "annonce",
   props: {
-    name: "",
+    name: "",//recherche d'un critique ...
     imgUrl: "",
     nbCommentaire: "",
+    title:"",//creation d'un roman d'amour ...()
+    datePub:"",
+    type:"",//projet roman
+    description:"",
+    nbCandidat:"",
+    searchProfil:"",//auteur-critique
+    nbAuteur:"",
+    nbCritique:"",
+    status:""
+
   },
 };
 </script>

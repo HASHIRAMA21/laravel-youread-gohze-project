@@ -24,8 +24,7 @@ p {
 .shadow-card {
     overflow: hidden
 }
-
-/* .shadow-card {width:100%;height:auto} */
+@media only screen and (min-width: 640px) {
 .shadow-card:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -35,7 +34,7 @@ p {
     background-color: #0d3330;
     color:white
 }
-
+}
 img {
     width: 100%;
     height: 100%;
