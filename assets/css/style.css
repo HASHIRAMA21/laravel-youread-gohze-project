@@ -74,6 +74,10 @@
     @apply md:text-base;
     @apply lg:text-lg;
 }
+.m-text-bigger{
+    @apply text-lg;
+    @apply lg:text-xl;
+}
 .m-text-big {
     @apply lg:text-2xl;
     @apply text-lg;
