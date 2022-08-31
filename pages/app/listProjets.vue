@@ -1,6 +1,6 @@
 <template>
     <div class="container pt-20">
-        <div>
+        <div class="test">
         <div class="lg:m-0 m-auto-resp lg:text-left lg:w-full ">
             <p class="uppercase text-indigo font-bold m-text-bigger">liste des projets</p>
         </div>
@@ -10,10 +10,11 @@
         <div class=" m-auto-resp lg:w-full">
             <p class="uppercase text-xs md:pt-12 pt-4"> non acheve(s)</p>
             <hr class="first-hr mt-2">
-        </div></div>
+        </div>
+        </div>
         <!-- projets  non acheves -->
-        <div class="flex mt-8  w-full justify-center">
-            <div class="grid lg:grid-cols-2">
+        <div class="lg:flex mt-8  w-full justify-center">
+            <div class="grid md:grid-cols-2">
                 <div class="mt-7 lg:ml-11" v-for="(projet, index) in projetsNonAchieved" :key="index">
                     <projet :name="projet.name" :description="projet.description" :isAchieved="projet.isAchieved"
                         :iconeBag="projet.iconeBag" :iconePeople="projet.iconePeople" :nbAuthor="projet.nbAuthor"
@@ -41,8 +42,8 @@
             <hr class="first-hr mt-2">
         </div>
         <!-- projets acheves -->
-        <div class="flex mt-8  w-full justify-center">
-            <div class="grid lg:grid-cols-2">
+        <div class="lg:flex mt-8  w-full justify-center">
+            <div class="grid md:grid-cols-2">
                 <div class="flex mt-7 lg:ml-11" v-for="(projet, index) in projetsAchieved" :key="index">
                     <projet :name="projet.name" :description="projet.description" :isAchieved="projet.isAchieved"
                         :iconeBag="projet.iconeBag" :iconePeople="projet.iconePeople" :nbAuthor="projet.nbAuthor"
@@ -84,18 +85,20 @@
     margin-bottom: 100px;
 }
 }
-@media screen and (min-width: 641px) and (max-width: 1023px) {
+@media screen and (min-width: 641px) and (max-width: 800px) {
    .m-auto-resp{
     margin: auto;
     max-width: 672px; 
 } 
+
 .container {
     width: 400px;
     margin: auto;
     margin-bottom: 100px;
+    
 }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
     .container {
     width: 1200px;
     margin: auto;

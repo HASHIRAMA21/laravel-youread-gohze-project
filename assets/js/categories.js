@@ -46,5 +46,47 @@ export default[
     {
         image: '../../assets/img/categorielivres/grenouille.png',
         name: 'Animaux',
+    }, {
+        image: '../../assets/img/categorielivres/main.png',
+        name: 'Humanisme',
+    },
+    {
+        image: '../../assets/img/categorielivres/grenouille.png',
+        name: 'Animaux',
+    }, {
+        image: '../../assets/img/categorielivres/main.png',
+        name: 'Humanisme',
+    },
+    {
+        image: '../../assets/img/categorielivres/grenouille.png',
+        name: 'Animaux',
+    }, {
+        image: '../../assets/img/categorielivres/main.png',
+        name: 'Humanisme',
+    },
+    {
+        image: '../../assets/img/categorielivres/grenouille.png',
+        name: 'Animaux',
+    }, {
+        image: '../../assets/img/categorielivres/main.png',
+        name: 'Humanisme',
+    },
+    {
+        image: '../../assets/img/categorielivres/grenouille.png',
+        name: 'Animaux',
+    }, {
+        image: '../../assets/img/categorielivres/main.png',
+        name: 'Humanisme',
+    },
+    {
+        image: '../../assets/img/categorielivres/grenouille.png',
+        name: 'Animaux',
+    }, {
+        image: '../../assets/img/categorielivres/main.png',
+        name: 'Humanisme',
+    },
+    {
+        image: '../../assets/img/categorielivres/grenouille.png',
+        name: 'Animaux',
     }
 ]

@@ -55,10 +55,10 @@
             >
           </div>
         </div>
-        <div class="mt-2.5">
+        <div class="mt-2.5 m-text-normal ">
           <p>Description:</p>
         </div>
-        <div class="mt-0.5">
+        <div class="mt-0.5 m-text-normal">
           <p>{{ description }}</p>
         </div>
         <div>
@@ -122,7 +122,7 @@
     color: #9d9d9d;
   }
   .container-small {
-    width: 90%;
+    width: 93%;
   }
 }
 
@@ -137,8 +137,15 @@
 }
 @media screen and (min-width: 768px) {
   .shadow-card {
+    width: 350px;
+    /* width: 499px; */
+    min-height: 400px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shadow-card {
     width: 499px;
-    height: 400px;
+    min-height: 400px;
   }
 }
 @media screen and (max-width: 640px) {
