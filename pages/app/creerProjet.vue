@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="lg:flex container justify-center m-auto py-10">
-      <div>
+    <div class="md:flex container justify-center m-auto py-10">
+      <div class="first-block">
         <div class="first-container">
           <p class="uppercase text-indigo font-bold text-xl leading-7">
             creer votre projet sur youread
           </p>
-          <p class="m-text-normal leading-4 text-gray ml-3 mt-1.5">
+          <p class="m-text-normal leading-4 text-gray  mt-1.5">
             <span class="block"
               >creez votre projet et collaborez avec d'autres </span
             >utilisateurs pour produire une oeuvre innovante
@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class="rounded-lg shadow-card grid mx-16">
+      <div class="rounded-lg shadow-card grid sm:mx-16 md:mx-0 lg:mx-16">
         <!-- <ValidationObserver ref="form" v-slot="{ passes }"> -->
         <Form v-slot="{ errors }" class="form">
           <div class="grid">
@@ -67,7 +67,7 @@
             <span class="error"> {{ errors.titre }} </span>
           </div>
           <!-- </ValidationProvider> -->
-          <div class="mt-2.5 text-xs sm:flex input-xl">
+          <div class="mt-2.5 text-xs sm:flex">
             <!-- <ValidationProvider v-slot="{ errors }" name="nbCollaborateur" rules="required"> -->
             <div class="w-full">
               <label class="block uppercase" for="nombre">
@@ -106,13 +106,13 @@
               <div>
                 <Multiselect
                   v-model="value"
-                  mode="multiple"
+                  mode="tags"
                   :options="options"
-                  :createTag="true"
+                  :search="true"
                   placeholder="SELECT PROFIL"
                   label="name"
                   track-by="name"
-                  class="
+                  class="test
                     input-lg input
                     text-xs
                     mt-0.5
@@ -120,24 +120,29 @@
                     appearance-none
                     block
                     w-full
-                    border-gray-200
-                    text-gray-700
                     border
+                    text-gray-700
+                   border-gray-200
                     rounded-lg
                   "
                 >
-                  <template v-slot:multipleLabel="{ values }">
+                    <!-- <template v-slot:multipleLabel="{ values }">
+                      <div class="multiselect-multiple-label">
+                        {{ values.length }} characters selected
+                      </div>
+                    </template> -->
+                  <!-- <template v-slot:multipleLabel="{ values }">
                     <div class="multiselect-multiple-label text-xs">
                       {{ values.length }} profils selected
                     </div>
-                  </template>
+                  </template> -->
                 </Multiselect>
               </div>
               <span class="error"> </span>
             </div>
             <!-- </ValidationProvider> -->
           </div>
-          <div class="mt-2.5 sm:flex input-xl">
+          <div class="mt-2.5 sm:flex">
             <!-- <ValidationProvider v-slot="{ errors }" name="theme" rules="required"> -->
             <div class="w-full">
               <label class="block uppercase text-xs" for="nombre">
@@ -172,12 +177,13 @@
               <label class="block uppercase text-xs" for="profil">
                 langue
               </label>
-
+              
               <Multiselect
                 v-model="langue"
                 name="langue"
                 placeholder="select language"
                 class="
+                  input
                   block
                   mt-0.5
                   text-xs
@@ -245,7 +251,7 @@
         </Form>
         <!-- </ValidationObserver> -->
       </div>
-      <div class="disappear-lg">
+      <div class="disappear-xl">
         <div class="">
           <figure class="circle-md bg-indigo"></figure>
         </div>
@@ -268,10 +274,30 @@
 
 
 <style scoped>
+
+/* .test{
+  max-height: 100px!important;
+  overflow-y: visible!important;
+  overflow-x: auto!important;
+} */
+.multiselect-tags {
+    max-height: 30px;
+    overflow: auto;
+}
+.input{
+  height: 45px;
+}
 input {
   padding: 10px;
   height: 45px;
 }
+input,
+  select,
+  .input {
+    background-color: #f9fafb;
+    height: 39px !important;
+    border-radius: 0.5rem !important;
+  }
 
 @media screen and (max-width: 640px) {
   .shadow-card {
@@ -306,11 +332,26 @@ input {
     text-align: center;
   }
   form{
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
+
 @media screen and (min-width: 1024px) {
+  .content-img {
+  width: 434px;
+  height: 234px;
+}
+  .input-xl{
+    width: 429px;
+    margin: auto;
+  }
+  .input-lg{
+     width: 200px;
+  }
+  /* .input{
+  width: 200px;
+} */
   .long-input {
     padding-bottom: 250px;
   }
@@ -320,6 +361,16 @@ input {
   }
 }
 @media screen and (min-width: 641px) and (max-width: 1023px) {
+  .first-block{
+    width: 300px;
+  }
+  .content-img {
+  width: 300px;
+  height: 200px;
+}
+.shadow-card{
+  margin-top: 100px;
+}
   .first-container {
     width: 502px;
     /* padding-left: 50px; */
@@ -331,13 +382,32 @@ input {
     padding-left: 40px;
     padding-right: 40px;
   }
+  
 }
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 641px) and (max-width: 767px) {
+  .first-container {
+    text-align: center;
+  }
+  .container{
+    padding-left: 40px;
+    padding-right: 40px;
+    /* background-color: red; */
+  }
+  .shadow-card{
+    margin-top: 20px;
+  }
+  
+}
+@media screen and (max-width: 767px) {
   .disappear-lg {
     display: none;
   }
 }
-
+@media screen and (max-width: 1280px){
+  .disappear-xl{
+    display: none;
+  }
+}
 .container-select {
   position: relative;
   max-width: 320px;
@@ -353,6 +423,7 @@ select::placeholder {
 .container {
   margin: auto;
   margin-bottom: 100px;
+  
   /* justify-content: center; */
 }
 
@@ -392,12 +463,7 @@ button:hover {
   .long-input {
     height: 276px !important;
   }
-  input,
-  select,
-  .input {
-    background-color: #f9fafb;
-    /* height: 39px; */
-  }
+  
   .shadow-card {
     box-shadow: 0px 2px 10px 0px #00000040;
     /* min-height: 695px; */
@@ -415,18 +481,11 @@ select:focus-within,
   margin: auto;
 } */
 
-.test {
-  position: absolute;
-}
-
 .text-gray {
   color: #7e7e7e;
 }
 
-.content-img {
-  width: 434px;
-  height: 234px;
-}
+
 
 .content-img > img {
   width: 100%;
@@ -434,10 +493,10 @@ select:focus-within,
   object-fit: cover;
 }
 </style>
-<style src="@vueform/multiselect/themes/default.css"></style>
+<style src="@vueform/multiselect/themes/creerProjet.css"></style>
 <script>
 // import { ValidationObserver, ValidationProvider } from "vee-validate";
-
+// import Multiselect from 'vue-multiselect'
 import Multiselect from "@vueform/multiselect";
 import { Form, Field } from "vee-validate";
 export default {
@@ -447,18 +506,28 @@ export default {
     Field,
     Multiselect,
   },
-  data() {
-    return {
-      langue: "francais",
-      titre: "",
-      theme: "",
-      description: "",
-      value: null,
-      options: ["Batman", "Robin", "Joker"],
-      langues: ["francais", "anglais"],
-      // schema
-    };
+  setup() {
+    const langue = ref("francais");
+    const titre = ref("");
+    const theme = ref("");
+    const description = ref("");
+    const value = ref(null);
+    const options = ref(["Batman", "Robin", "Joker"]);
+    const langues = ref(["francais", "anglais"]);
+    return {langue , titre , theme , description , value , options , langues}
   },
+  // data() {
+  //   return {
+  //     // langue: "francais",
+  //     titre: "",
+  //     theme: "",
+  //     description: "",
+  //     value: null,
+  //     options: ["Batman", "Robin", "Joker"],
+  //     langues: ["francais", "anglais"],
+  //     // schema
+  //   };
+  // },
 
   methods: {
     // Validator function

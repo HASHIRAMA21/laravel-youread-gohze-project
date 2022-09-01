@@ -13,6 +13,7 @@
   "dependencies": {
     "@vueform/multiselect": "^2.5.2",
     "vee-validate": "^4.6.6",
+    "vue-multiselect": "^2.1.6",
     "vue3-easy-data-table": "^1.4.15"
   }
 }
