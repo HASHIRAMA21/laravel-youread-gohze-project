@@ -30,7 +30,7 @@
         </div>
         <div class="bg-white rounded-2xl ml-12 container-block p-7 grid">
           <div><p class="m-text-big">{{ annonce.type }}</p></div>
-          <div class="mt-2"><p class="m-text-small"><span class="text-gray">{{ annonce. datePub }}-</span><span class="text-indigo">{{ annonce.nbCandidat }} candidat(s)</span></p></div>
+          <div class="mt-2"><p class="m-text-small"><span class="text-gray">{{ annonce.datePub }}-</span><span class="text-indigo">{{ annonce.nbCandidat }} candidat(s)</span></p></div>
           <div class="flex mt-3 m-text-normal"><div class="w-7 h-5"><img src="@/assets/img/listeprojets/Vector.png" class="w-full h-full object-cover" /></div><div class="ml-4"><span>{{ annonce.searchProfil }}</span></div></div>
           <div class="flex mt-3 m-text-normal"><div class="w-7 h-5"><img src="@/assets/img/listeprojets/Vector (1).png" class="w-full h-full object-cover" /></div><div class="ml-4"><span>{{ annonce.nbAuteur }} Auteurs et {{annonce.nbCritique}} critiques</span></div></div>
           <div class="flex mt-3 m-text-normal"><div class="w-7 h-6"><img src="@/assets/img/annonces/Vector.png" class="w-full h-full object-cover" /></div><div class="ml-4 uppercase text-yellow "><span>{{ annonce.status }}</span></div></div>
