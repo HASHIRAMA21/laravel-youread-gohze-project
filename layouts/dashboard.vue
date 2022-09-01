@@ -1,14 +1,14 @@
 <template>
   <div class="dashboard">
     <div
-      class="grid headergrid w-full fixed top-0 right-0 z-40"
+      class="grid headergrid w-full fixed top-0 right-0 z-30"
       :class="sideBarVisible ? 'headergrid-normal' : 'headergrid-phone'"
     >
       <HeaderDashboard
         @toggleSideBar="toggleSideBar"
         @toggleSideBarPhone="toggleSideBarPhone"
         :sideBarVisible="sideBarVisible"
-        class="z-40"
+        class="z-30"
       />
     </div>
     <div
@@ -16,13 +16,13 @@
       :class="sideBarVisible ? 'maingrid-normal' : 'maingrid-phone'"
     >
       <SideBarDashboard
-        class="typeNormal z-50 fixed top-0 left-0"
+        class="typeNormal z-40 fixed top-0 left-0"
         v-if="sideBarVisible"
       />
 
       <transition name="slide">
         <SideBarDashboard
-          class="typePhone z-50 hide fixed top-0 left-0"
+          class="typePhone z-40 hide fixed top-0 left-0"
           v-if="sideBarPhoneVisible"
           v-click-outside="closeSideBarPhone"
           @click-outside="closeSideBarPhone"
