@@ -493,7 +493,7 @@ select:focus-within,
   object-fit: cover;
 }
 </style>
-<style src="@vueform/multiselect/themes/creerProjet.css"></style>
+<style src="@/assets/css/creerprojet.css"></style>
 <script>
 // import { ValidationObserver, ValidationProvider } from "vee-validate";
 // import Multiselect from 'vue-multiselect'
@@ -516,19 +516,6 @@ export default {
     const langues = ref(["francais", "anglais"]);
     return {langue , titre , theme , description , value , options , langues}
   },
-  // data() {
-  //   return {
-  //     // langue: "francais",
-  //     titre: "",
-  //     theme: "",
-  //     description: "",
-  //     value: null,
-  //     options: ["Batman", "Robin", "Joker"],
-  //     langues: ["francais", "anglais"],
-  //     // schema
-  //   };
-  // },
-
   methods: {
     // Validator function
     isRequired(value) {

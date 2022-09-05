@@ -14,7 +14,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 a.nuxt-link-active {
   font-weight: bold;
 }
