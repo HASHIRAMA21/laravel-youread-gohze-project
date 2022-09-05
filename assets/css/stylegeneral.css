@@ -34,3 +34,6 @@ input[type="checkbox"]{
 .page-leave-to {
   opacity: 0;
 }
+.text-upper{
+  text-transform: uppercase;
+}
