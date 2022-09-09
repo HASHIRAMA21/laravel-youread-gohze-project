@@ -1,0 +1,26 @@
+image: node:14.15.4
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+  only:
+    - dev
+  before_script:
+    - npm install
+  script:
+    - npm run generate
+  artifacts:
+    paths:
+      - public
+
+deploy:
+    - apk add --no-cache rsync openssh bash
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_dsa
+    - chmod 600 ~/.ssh/id_dsa
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - rsync -rav --delete public/ devops@173.249.13.198:/var/www/devops/youread
+
+
