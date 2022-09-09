@@ -13,7 +13,7 @@ build:
     - npm run generate
   artifacts:
     paths:
-      - public
+      - .output/public
 
 deploy:
   image: alpine
@@ -26,5 +26,5 @@ deploy:
     - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_dsa
     - chmod 600 ~/.ssh/id_dsa
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - rsync -rav --delete dist/ devops@173.249.13.198:/var/www/devops/youread
+    - rsync -rav --delete .output/public/ devops@173.249.13.198:/var/www/devops/youread
 
