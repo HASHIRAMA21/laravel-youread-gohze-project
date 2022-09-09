@@ -16,11 +16,15 @@ build:
       - public
 
 deploy:
+  image: alpine
+  stage: deploy
+  only:
+    - dev
+  script:
     - apk add --no-cache rsync openssh bash
     - mkdir -p ~/.ssh
     - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_dsa
     - chmod 600 ~/.ssh/id_dsa
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - rsync -rav --delete public/ devops@173.249.13.198:/var/www/devops/youread
-
+    - rsync -rav --delete dist/ devops@173.249.13.198:/var/www/devops/youread
 
