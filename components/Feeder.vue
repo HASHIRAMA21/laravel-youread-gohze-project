@@ -6,7 +6,7 @@ import img29 from '@/assets/img/acceuil-image/im29.png'
 import 'vue3-carousel/dist/carousel.css';
 
 const breakpoints = {
-    500: {
+    200: {
         itemsToShow: 1,
         snapAlign: 'center',
     },
