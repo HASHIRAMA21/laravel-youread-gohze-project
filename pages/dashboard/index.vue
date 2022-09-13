@@ -1,9 +1,15 @@
 <template>
-  <div class="dashboard-content-margin">ACCUEIL DASHBOARD</div>
+  <div>
+    <BienvenueCard />
+    <DateCard />
+    <RecentFiles />
+  </div>
 </template>
 
 <script>
+
 </script>
 
 <style scoped>
+
 </style>

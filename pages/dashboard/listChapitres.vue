@@ -57,7 +57,7 @@
                                         </tr>
                                     </thead>
                                     <tbody class="font-light">
-                                        <tr class="border-b border-gray-200 hover-bg cursor-pointer" v-for="(chapitre, index) in dataPage" :key="key">
+                                        <tr class="border-b border-gray-200 hover-bg cursor-pointer" v-for="(chapitre, index) in dataPage" :key="index">
                                             <td class="py-3 px-6 text-left whitespace-nowrap display-none-lg">
                                               <div class="flex items-center mr-4">
                                                   <input id="chapterChecked" v-on:click="dataChecked(chapitre)" type="checkbox" value="" class="w-4 h-4 text-teal-600 bg-gray-100 rounded-xl border-gray-300 focus:ring-teal-50 focus:ring-2 ">
@@ -136,7 +136,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="cursor-pointer" v-for="page in totalPages()" v-on:click="getDataPage(page)">
+                <li class="cursor-pointer" v-for="(page, index) in totalPages()" :key="index" v-on:click="getDataPage(page)">
                     <a v-if="isActive(page)" class="bg-indigo  text-white
             w-7
             h-7
