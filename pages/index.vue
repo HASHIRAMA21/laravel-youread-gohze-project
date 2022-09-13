@@ -1,25 +1,70 @@
-<template>
-  <div>
-    <h1>LA GERTA</h1>
-  </div>
-</template>
+<script setup>
 
-<script>
-export default {
-  name: "IndexPage",
-  data(){
-    return {
-    };
-  }
-};
 </script>
 
+<template>
+   <div class="container m-auto mt-0">
+      <p>ma page d'accueil et d'entree</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+      <p>ma page d'accueil</p>
+   </div>  
+</template>
+
 <style scoped>
-a.nuxt-link-active {
-  font-weight: bold;
-}
-/* exact link will show the primary color for only the exact matching link */
-a.nuxt-link-exact-active {
-  color: #00c58e;
-}
+
 </style>
