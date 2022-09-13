@@ -1,5 +1,5 @@
 <template>
-<div class="min-h-screen flex flex-col justify-between">
+<div class="min-h-screen flex flex-col justify-between w-full hoverflow-hidden">
   <header>
     <Navigation />
   </header> 

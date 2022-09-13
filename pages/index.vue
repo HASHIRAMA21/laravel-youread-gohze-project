@@ -3,65 +3,11 @@
 </script>
 
 <template>
-   <div class="container m-auto mt-0">
-      <p>ma page d'accueil et d'entree</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
-      <p>ma page d'accueil</p>
+   <div class="m-auto mt-0 ml-0 mr-0 w-full p-0">
+      <Header />
+      <Gallery />
+      <Abouter />
+      <Feeder />
    </div>  
 </template>
 

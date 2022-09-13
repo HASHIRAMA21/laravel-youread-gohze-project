@@ -6,6 +6,7 @@
 body{
   background-color: #FEFEFE;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
 .bg-vertbleu{
     background-color: var(--vertbleu);
@@ -19,6 +20,25 @@ body{
 
 .cercle{
     border-radius: 50%;
+}
+
+.radius-full{
+  border-radius: 100%;
+}
+.colored-text{
+  color: #007D74;
+}
+.bg-green-1{
+  background: #007D74;
+}
+.bg-green-2{
+  background: #1CC9BD;
+}
+.bg-yellow-1{
+  background: #F7CB29;
+}
+.border-green-1{
+  border: 1px solid #007D74;
 }
 
 input[type="checkbox"]{
@@ -36,4 +56,78 @@ input[type="checkbox"]{
 }
 .text-upper{
   text-transform: uppercase;
+}
+.carousel-header .carousel__prev{
+  box-sizing: content-box;
+  left: 30px !important;
+  background: transparent;
+  height: 85.00000762939491px;
+  width: 104.9999923706058px;
+  border-radius: 0px;
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 54px;
+
+}
+.carousel-header .carousel__next {
+  box-sizing: content-box;
+  background: transparent;
+  right: 30px !important;
+  width: 104.9999923706058px;
+  border-radius: 0px;
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 54px;
+}
+.carousel-header .carousel__pagination-item{
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  right: 0;
+}
+.carousel-header .carousel__pagination-button{
+  height: 17px;
+  width: 42.1219482421875px;
+  border-radius: 0px;
+  background: #FFFFFF;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+.carousel-header .carousel__pagination-button--active{
+  opacity: 1;
+}
+
+
+.feeder .carousel__prev{
+  box-sizing: content-box;
+  left: 44%!important;
+  background: #1CC9BD;
+  color: #000;
+  height: 40px;
+  width: 40px;
+  border-radius: 0px;
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 54px;
+  transform: translate(50%, 400%);
+
+}
+.feeder .carousel__next {
+  box-sizing: content-box;
+  background: #1CC9BD;
+  color: #000;
+  right: 44% !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 0px;
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 54px;
+  transform: translate(50%, 400%);
+}
+.feeder .carousel__prev:hover,
+.feeder .carousel__next:hover,
+.feeder .carousel__prev:focus,
+.feeder .carousel__next:focus{
+  background: #FFF;
 }

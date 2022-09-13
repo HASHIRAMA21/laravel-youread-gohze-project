@@ -188,6 +188,7 @@ function setSmallMenuAnnounceState(){
     background: #FFFFFF;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     height: 89px;
+    z-index: 999999;
     @apply flex flex-col justify-center items-start;
     @media(max-width: 500px){
         height: 70px;
