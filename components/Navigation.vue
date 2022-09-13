@@ -292,7 +292,7 @@ function setSmallMenuAnnounceState(){
                                         z-index: 52;
                                         border-radius: 8px;
                                         background: #FFF;
-                                        font-size: 24px;
+                                        font-size: 18px;
                                         font-weight: 600;
                                         line-height: 30px;
                                         letter-spacing: 0em;
