@@ -245,7 +245,7 @@
             width: 155px;
             text-transform: uppercase;
             font-family: Poppins;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             line-height: 36px;
             letter-spacing: 0em;

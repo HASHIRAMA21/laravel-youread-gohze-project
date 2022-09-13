@@ -100,7 +100,7 @@ input[type="checkbox"]{
 
 .feeder .carousel__prev{
   box-sizing: content-box;
-  left: 44%!important;
+  left: 46%!important;
   background: #1CC9BD;
   color: #000;
   height: 40px;
@@ -116,7 +116,7 @@ input[type="checkbox"]{
   box-sizing: content-box;
   background: #1CC9BD;
   color: #000;
-  right: 44% !important;
+  right: 46% !important;
   width: 40px;
   height: 40px;
   border-radius: 0px;
@@ -131,3 +131,13 @@ input[type="checkbox"]{
 .feeder .carousel__next:focus{
   background: #FFF;
 }
+
+@media screen and (max-width: 750px) {
+  .feeder .carousel__prev{
+    left: 38%!important;
+  }
+  .feeder .carousel__next{
+    right: 38% !important;
+  }
+}
+
