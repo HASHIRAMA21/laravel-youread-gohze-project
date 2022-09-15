@@ -12,8 +12,7 @@ export const useMainStore = defineStore({
             location: 'Damas rue Edzoa',
             receiveNotifications: true,
             receiveComments: true,
-            receiveLikes: false,
-            isOnline:true
+            receiveLikes: false
         }
     }
   },

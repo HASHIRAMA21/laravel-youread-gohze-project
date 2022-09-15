@@ -1,25 +1,16 @@
-<template>
-  <div>
-    <h1>LA GERTA</h1>
-  </div>
-</template>
+<script setup>
 
-<script>
-export default {
-  name: "IndexPage",
-  data(){
-    return {
-    };
-  }
-};
 </script>
 
+<template>
+   <div class="m-auto mt-0 ml-0 mr-0 w-full p-0">
+      <Header />
+      <Gallery />
+      <Abouter />
+      <Feeder />
+   </div>  
+</template>
+
 <style scoped>
-a.nuxt-link-active {
-  font-weight: bold;
-}
-/* exact link will show the primary color for only the exact matching link */
-a.nuxt-link-exact-active {
-  color: #00c58e;
-}
+
 </style>
