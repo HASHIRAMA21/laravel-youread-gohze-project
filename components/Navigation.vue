@@ -275,7 +275,7 @@ function setSmallMenuAnnounceState(){
 
                                 .relative{
                                     z-index: 51;
-                                    podition: relative;
+                                    position: relative;
                                     border-radius: 8px;
                                     .dropdown-tracker{
                                         position: absolute;

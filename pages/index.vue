@@ -3,7 +3,7 @@
 </script>
 
 <template>
-   <div class="m-auto mt-0 ml-0 mr-0 w-full p-0">
+   <div class="w-full p-0 overflow-hidden">
       <Header />
       <Gallery />
       <Abouter />

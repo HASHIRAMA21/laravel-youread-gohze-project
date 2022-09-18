@@ -10,9 +10,13 @@ const breakpoints = {
         itemsToShow: 1,
         snapAlign: 'center',
     },
+    500: {
+        itemsToShow: 1.5,
+        snapAlign: 'center',
+    },
     // 700px and up
     700: {
-        itemsToShow: 2.5,
+        itemsToShow: 2,
         snapAlign: 'center',
     },
     // 1024 and up
