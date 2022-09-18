@@ -13,7 +13,7 @@
 </script>
 
 <template>
-<div class="abouter py-12 p-auto">
+<div class="abouter py-12 px-8">
     <div class="best-project flex justify-center items-center">
         <div class="projects">
             <div class="projects-header text-center py-8">
@@ -94,11 +94,27 @@
                         height: 264px;
                     }
                 }
+                @media(max-width: 400px){
+                    .grid{
+                        @apply  grid-cols-2 gap-1;
+                    }
+                }
+                @media(max-width: 500px){
+                    .grid{
+                        @apply  grid-cols-2 gap-2;
+                    }
+                }
             }
         }
         .about-us{
+            @media(max-width: 500px){
+                @apply mt-16;
+            }
             .about-container{
                 .about-description{
+                    @media(max-width: 500px){
+                        width: 100%;
+                    }
                     width: 500px;
                     font-size: 24px;
                     font-weight: 400;
@@ -112,6 +128,9 @@
                     }
                 }
                 .about-skills{
+                    @media(max-width: 500px){
+                        width: 100%;
+                    }
                     width: 500px;
                     border-color: #007D74;
                     .skills{
@@ -130,56 +149,73 @@
                         }
                     }
                 }
+                @media(max-width: 500px){
+                    @apply block py-0 px-4;
+                    .about-description{
+                        @apply w-full text-justify p-0;
+                        p{
+                            @apply w-full;
+                        }
+                    }
+                    .about-skills{
+                        @apply w-full flex flex-col justify-between p-0 border-0 mx-0 mt-8;
+                        .skills{
+                           @apply w-full mx-0 my-8 border-0;
+                        }
+                    }
+                }
             }
         }
-        .dot1{
-            height: 26px;
-            width: 26px;
-            left: 126px;
-            top: 65px;
-        }
-        .dot2{
-            height: 34px;
-            width: 34px;
-            left: 63px;
-            top: 480px;
-            left: 63px;
-        }
-        .dot3{
-            width: 26px;
-            height: 26px;
-            right: 255px;
-            top: 500px;
-        }
-        .dot4{
-            width: 26px;
-            height: 26px;
-            left: 550px;
-            top: 570px;
-        }
-        .dot5{
-            width: 26px;
-            height: 26px;
-            right: 100px;
-            bottom: 230px;
-        }
-        .dot6{
-            width: 8px;
-            height: 8px;
-            right: 255px;
-            bottom: 190px;
-        }
-        .dot7{
-            width: 12px;
-            height: 12px;
-            left: 200px;
-            bottom: 170px;
-        }
-        .dot8{
-            width: 26px;
-            height: 26px;
-            right: 100px;
-            bottom: 50px;
+        @media(min-width: 500px){
+            .dot1{
+                height: 26px;
+                width: 26px;
+                left: 126px;
+                top: 65px;
+            }
+            .dot2{
+                height: 34px;
+                width: 34px;
+                left: 63px;
+                top: 480px;
+                left: 63px;
+            }
+            .dot3{
+                width: 26px;
+                height: 26px;
+                right: 255px;
+                top: 500px;
+            }
+            .dot4{
+                width: 26px;
+                height: 26px;
+                left: 550px;
+                top: 570px;
+            }
+            .dot5{
+                width: 26px;
+                height: 26px;
+                right: 100px;
+                bottom: 230px;
+            }
+            .dot6{
+                width: 8px;
+                height: 8px;
+                right: 255px;
+                bottom: 190px;
+            }
+            .dot7{
+                width: 12px;
+                height: 12px;
+                left: 200px;
+                bottom: 170px;
+            }
+            .dot8{
+                width: 26px;
+                height: 26px;
+                right: 100px;
+                bottom: 50px;
+            }
         }
     }
 </style>

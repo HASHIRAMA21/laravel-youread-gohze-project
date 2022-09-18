@@ -162,9 +162,9 @@
         <button @click="selectSaturday" class="day flex justify-center items-center">sat</button>
         <button @click="selectSonday" class="day flex justify-center items-center">sun</button>
     </div>
-    <div class="gallerie-images w-full">
+    <div class="gallerie-images w-full px-8">
         <div v-if="viewMonday" class="gallerie-day flex justify-center items-center w-full py-12">
-            <div class="grid grid-cols-4 xsm:grid-cols-2 gap-4" v-if="gallery.monday">
+            <div class="grid grid-cols-4 md:grid-cols-3 xsm:grid-cols-2 gap-4" v-if="gallery.monday">
                 <div v-for="lecture in gallery.monday" :key="lecture.id" class="gallerie-item flex justify-center items-center">
                     <img :src="lecture.content" :alt="lecture.title"/>
                 </div>
@@ -245,7 +245,7 @@
             width: 155px;
             text-transform: uppercase;
             font-family: Poppins;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             line-height: 36px;
             letter-spacing: 0em;
@@ -265,6 +265,12 @@
         .grid{
             .gallerie-item{
                 height: 281.33px;
+            }
+            @media(max-width: 500px){
+                @apply grid-cols-2 gap-2;
+            }
+            @media(max-width: 400px){
+                @apply grid-cols-2 gap-1;
             }
         }
     }

@@ -38,6 +38,9 @@ const slides = [
                 .carousel__slide {
                     padding: 0;
                     .carousel__item {
+                        @media(max-width: 500px){
+                            height: 250px;
+                        }
                         min-height: 200px;
                         height: 450px;
                         width: 100%;

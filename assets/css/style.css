@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.text-gray{
+    color: #5A5A5A;
+}
+.text-orange{
+    color: #FF9F43;;
+}
+.text-indigo{
+    color: #007D74;
+}
+.bg-orange{
+    background-color: #F7CB29;
+}
+.bg-indigo-dark{
+    background-color: #015B52;
+}
+.bg-indigo{
+    background-color: #007D74;
+}
+.bg-indigo-light{
+    background-color: #1CC9BD;
+}
+.bg-indigo-extralight{
+    background-color: #E6FFFE;
+}
+.circle-xxl , .circle-xl , .circle-lg , .circle-md , .circle-sm{
+    display: block;
+    border-radius: 50%;
+}
+.circle-xxl{
+    width: 34px;
+    height: 34px;
+}
+.circle-xl{
+    width: 26px;
+    height: 26px;
+}
+.circle-lg{
+    width: 18px;
+    height: 18px;
+}
+.circle-md{
+    width: 12px;
+    height: 12px;
+}
+.circle-sm{
+    width: 8px;
+    height: 8px;
+}
+
+.input-custom,
+.select-custom
+{
+  background-color: #f9fafb;
+}
+.input-custom:focus-within,
+.textarea-custom:focus-within,
+.select-custom:focus-within {
+  border: 2px solid #007d74;
+}
+.m-text-extrasmall{
+    @apply text-sm;
+    @apply md:text-xs;
+}
+
+.m-text-small {
+    @apply md:text-sm;
+    @apply text-xs;
+}
+.m-text-normal {
+    @apply md:text-base;
+    @apply text-sm;
+}
+.m-text-bigger-normal {
+    @apply text-sm;
+    @apply md:text-base;
+    @apply lg:text-lg;
+}
+.m-text-bigger{
+    @apply text-lg;
+    @apply lg:text-xl;
+}
+.m-text-big {
+    @apply lg:text-2xl;
+    @apply text-lg;
+}
+
+.m-text-extra-bigger {
+    @apply text-xl;
+    @apply md:text-3xl;
+    @apply lg:text-4xl;
+}
+.error_input {
+    border: 2px solid rgb(196, 15, 15);
+}
+
+.error {
+    color: rgb(196, 15, 15);
+    font-weight: 500;
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .disappear {
+      display: none;
+    }
+}
+
