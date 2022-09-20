@@ -108,7 +108,7 @@ function setSmallMenuAnnounceState(){
                         <ul class="menu">
                             <li><nuxt-link to="" class="text-upper navbar-link">accueil</nuxt-link></li>
                             <li class="dropdown">
-                                <div class="dropdown-item">
+                                <div class="dropdown-item custum-item">
                                     <button @click="toggleCatalogue" v-click-outside.prevent="hideCatalogue" class="navbar-link"><span class="text-upper">catalogue</span> <i class="fas fa-chevron-down"></i></button>
                                 </div>
                                 <div v-if="catalogueIsVisible" class="dropdown-content rounded">
