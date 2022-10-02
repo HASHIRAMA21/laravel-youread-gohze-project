@@ -15,10 +15,9 @@ class Publication extends Model implements HasMedia
         'user_id',
         'titre',
         'description',
-        'date_publication',
-        'image',
+        'publish_date',
         'category',
-        'files',
+        'file',
         'views',
         'likes',
         'dislikes'
@@ -46,7 +45,5 @@ class Publication extends Model implements HasMedia
     {
         return $this->hasOne(AudioBook::class);
     }
-
-
 
 }

@@ -39,13 +39,14 @@ class BdController extends Controller
         $validator = Validator::make($request->all(),
         [
         'title' =>'required',
-        'author' =>'required',
+        'authors' =>'required',
         'description' =>'required',
         'category' =>'required',
+        'status'=>'required',
         'publishing_house'=>'required',
         'parution_date' => 'required',
-        'user_id' => 'required',
-        'file' => 'required|mimes:doc,docx,pdf,txt|max:2048',
+        //'user_id' => 'required',
+        'file' => 'required|mimes:doc,docx,pdf,txt|max:204800',
        ]);
 
 if ($validator->fails()) {
@@ -60,13 +61,15 @@ if ($validator->fails()) {
 
       //store your file into database
       $document = new Bd();
-      $document->title = $file;
-      $document->author = $request->author;
+      $document->title = $request->title;
+      $document->authors = $request->authors;
       $document->description = $request->description;
       $document->category = $request->category;
+      $document->status = $request->status;
+      $document->files = $file;
       $document->publishing_house = $request->publishing_house;
       $document->parution_date = $request->parution_date;
-      $document->user_id = $request->user_id;
+     // $document->user_id = auth()->user()->id;
 
       if($request->hasFile('image') && $request->file('image')->isValid()){
         $document->addMediaFromRequest('image')->toMediaCollection('images');
@@ -78,7 +81,7 @@ if ($validator->fails()) {
           "success" => true,
           "message" => "File successfully uploaded",
           "file" => $file,
-          "oeuvre_litteraire" => $document
+          "bds" => $document
       ],200);
 
   }
@@ -146,12 +149,20 @@ if ($validator->fails()) {
     }
 
 
-    public function  store1(Request $request,$id) {
+    public function  update1(Request $request,$id) {
         $bd = Bd::find($id);
         $bd->update($request->all());
         return $bd;
     }
-    public function uploadBd(Request $request){
+
+        public function createForm(){
+          return view('file-upload');
+            }
+
+            
+    /**
+     * 
+     * public function uploadBd(Request $request){
         $request->validate([
         'file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:204800'
         ]);
@@ -177,14 +188,12 @@ if ($validator->fails()) {
             back()
             ->with('success','File has been uploaded.')
             ->with('file', $fileName);
-            */
         }
-   }
-        public function createForm(){
-          return view('file-upload');
-            }
+    }
+    
+     */
 
-}
+        }
 
 
 

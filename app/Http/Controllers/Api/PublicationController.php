@@ -7,10 +7,11 @@ use App\Models\Publication;
 use App\Models\PublicationLikes;
 use Illuminate\Http\Request;
 use App\Http\Resources\PublicationResource;
+use Illuminate\Support\Facades\Validator;
 
 class PublicationController extends Controller
-{ 
-    
+{
+
     public function index()
     {
         $publication = Publication::all();
@@ -23,17 +24,7 @@ class PublicationController extends Controller
         $publication = Publication::paginate(20);
         return $publication;
     }
-     public function store(Request $request) {
-        $publication = new Publication();
-        $publication->files = $request->file('file')->store('public');
-        $result = $publication->save();
-        if($result) {
-            return response()->json(['message'=>'Successfully added the file in the database','publication'=>$publication],200);
-        }else {
-            return response()->json([' message'=>'error try to add the file']);
-        }
-     }
-
+    
     public function addPublication(Request $request)
     {
         $valiator = $request->validate([
@@ -53,19 +44,57 @@ class PublicationController extends Controller
         return $publication;
 
     }
-
-    public function addPublications1(Request $request)
+    public function store(Request $request)
     {
-        $request->validate(['file' => 'required|mimes:doc,docx,xlx,csv,pdf|max:1024']);
+        //
+        $validator = Validator::make($request->all(),
+        [
+        'title' =>'required',
+        //'authors' =>'required',
+        'description' =>'required',
+        'category' =>'required',
+        'status'=>'required',
+        'publish_date' => 'required',
+        //'user_id' => 'required',
+        'file' => 'required|mimes:doc,docx,pdf,txt|max:204800',
+       ]);
 
-    $file_name = time().'.'.$request->file->extension();
+if ($validator->fails()) {
+      return response()->json(['error'=>$validator->errors()], 401);
+   }
 
-    $request->file->move(public_path('file uploads'), $file_name);
 
-    return back()
-        ->with('success','Successfully uploaded a file!')
-        ->with('file',$file_name);
-    }
+   if ($files = $request->file('file')) {
+
+      //store file into document folder
+      $file = $request->file->store('public/documents/oeuvrelitteraire');
+
+      //store your file into database
+      $document = new Publication();
+      $document->title = $request->title;
+      //$document->authors = $request->authors;
+      $document->description = $request->description;
+      $document->category = $request->category;
+      $document->status = $request->status;
+      $document->publish_date = $request->publish_date;
+      $document->file = $file;
+     // $document->user_id = auth()->user()->id;
+
+      if($request->hasFile('image') && $request->file('image')->isValid()){
+        $document->addMediaFromRequest('image')->toMediaCollection('images');
+      }
+
+      $document->save();
+
+      return response()->json([
+          "success" => true,
+          "message" => "File successfully uploaded",
+          "file" => $file,
+          "bds" => $document
+      ],200);
+
+  }
+}
     /**
      * Display the specified resource.
      *
@@ -89,7 +118,6 @@ class PublicationController extends Controller
         $publication->update($request->all());
         return response(["publication"=> new PublicationResource($publication),'message'=>"Success 200"]);
     }
-
     /**
      * Remove the specified resource from storage.
      *

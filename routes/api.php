@@ -60,15 +60,16 @@ Route::group(['prefix' => 'S1'], function () {
 /**
  * Publication Route
  */
+
 Route::get('/publications',[PublicationController::class,'index']);
 Route::get('/publication-paginate',[PublicationController::class,'getPublicationPaginate']);
-
+Route::get('/publication/{publication}',[PublicationController::class,'show']);
 
 Route::middleware('auth:api')->group(function() {
-   Route::put('/update-publication/{publication_id}',[PublicationController::class,'update']);
-   Route::delete('delete-publication/{publication_id}',[PublicationController::class,'destroy']);
-   Route::post('/add-publication',[PublicationController::class,'addPublication']);
-   Route::get('similar-publication/{publication_id}',[PublicationController::class,'getSimilarPublication']);
+   Route::put('/publication/{publication}',[PublicationController::class,'update']);
+   Route::delete('publication/{publication}',[PublicationController::class,'destroy']);
+   Route::post('/addPublication',[PublicationController::class,'store']);
+   Route::get('similarPublication/{publication_id}',[PublicationController::class,'getSimilarPublication']);
 });
 /**
  * Comment Route
@@ -84,13 +85,15 @@ Route::middleware('auth:api')->group(function () {
  * Route sur les mangas et bd
  */
 Route::get('/bds',[BdController::class,'index']);
-Route::get('/bdPagination',[BdController::class,'getBdPaginate']);
+Route::get('/bdPagination',[BdController::class,'paginateBd']);
 Route::get('/bd/{id}',[BdController::class,'show']);
+
 Route::middleware('auth:api')->group(function() {
    Route::post('/add-bd',[BdController::class,'store1']);
    Route::apiResource('/ouevreLitteraires',OeuvreLitteraireController::class);
    Route::apiResource('/audioBooks',AudioBookController::class);
-   Route::apiResource('bds',BdController::class);
+   Route::post('add/bd',[BdController::class,'store']);
+   Route::delete('/delete-bd/{id}',[BdController::class,'destroy']);
 });
 /**
  * Search Route

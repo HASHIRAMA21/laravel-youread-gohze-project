@@ -19,12 +19,12 @@ return new class extends Migration
             $table->string('authors');
             $table->string('description');
             $table->string('category');
-            $table->string('file_name');
-            $table->string('file_path');
+            $table->string('files')->nullable();
+            #$table->string('file_path')->nullable();
             $table->string('status')->enum('en cours','termine','debut');
-            $table->dateTime('publishing_house');
+            $table->string('publishing_house');
             $table->dateTime('parution_date');
-            $table->unsignedBigInteger('publication_id')->references('id')->on('publications')->onDelete('cascade');
+            $table->unsignedBigInteger('publication_id')->references('id')->on('publications')->onDelete('cascade')->default(1);
             $table->timestamps();
         });
     }

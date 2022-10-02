@@ -14,7 +14,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements HasMedia,JWTSubject, MustVerifyEmail
+class User extends Authenticatable implements HasMedia, MustVerifyEmail # JWTSubject,
 {
     use LaratrustUserTrait;
     use HasApiTokens, HasFactory, Notifiable, InteractsWithMedia;

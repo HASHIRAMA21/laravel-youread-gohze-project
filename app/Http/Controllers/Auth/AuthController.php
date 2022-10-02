@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
-   
+
     public function register (Request $request) {
 
         $validator = Validator::make($request->all(), [
@@ -20,8 +20,9 @@ class AuthController extends Controller
             'last_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'username' => 'required|string|max:255',
-            'password' => 'required|string|min:8|confirmed',
-            //'phone_number'=>'max:15'
+            'password' => 'required|string|min:8',
+            //'password' => 'required|string|min:8|confirmed',
+            'phone_number'=>'max:15'
         ]);
 
         if ($validator->fails())
@@ -39,7 +40,8 @@ class AuthController extends Controller
     public function login (Request $request) {
         $validator = Validator::make($request->all(), [
             'email' => 'required|string|email|max:255',
-            'password' => 'required|string|min:6|confirmed',
+            //'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:8'
         ]);
         if ($validator->fails())
         {
@@ -70,7 +72,7 @@ class AuthController extends Controller
 
 
 
-  /** 
+  /**
    * public function registerv1(Request $request)
     {
         $data = $request->validate([
@@ -109,5 +111,5 @@ class AuthController extends Controller
 
     }
   */
-    
+
 }

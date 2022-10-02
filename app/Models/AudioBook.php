@@ -10,10 +10,13 @@ class AudioBook extends Model
     use HasFactory;
 
     protected $fillable = [
+        'authors',
         'title',
         'description',
         'files',
-        'audio'
+        'audio',
+        'category',
+        'parution_date'
     ];
 
     public function publication() {

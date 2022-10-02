@@ -17,11 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('authors');
+            $table->string('file');
+            $table->string('audio');
             $table->string('category');
             $table->dateTime('parution_date');
             $table->timestamps();
 
-            $table->unsignedBigInteger('publication_id')->references('id')->on('publications')->onDelete('cascade');
+            $table->unsignedBigInteger('publication_id')->references('id')->on('publications')->onDelete('cascade')->default(2);
         });
     }
 

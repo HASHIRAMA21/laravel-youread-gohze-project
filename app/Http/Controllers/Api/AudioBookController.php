@@ -41,9 +41,11 @@ class AudioBookController extends Controller
         // validation
         $this->validate($request, [
             'title' => 'required',
-            'description' => 'nullable',
+            'authors' => 'required',
             'file' => 'required|file|mimes:jpeg,jpg,png,gif|max:2048',
-            'audio' =>'nullable|file|mimes:audio/mpeg,mpga,mp3,wav,aac'
+            'audio' =>'nullable|file|mimes:audio/mpeg,mpga,mp3,wav,aac',
+            'category'=>'required',
+            'parution_date' => 'required'
         ]);
 
         // code for upload 'file'

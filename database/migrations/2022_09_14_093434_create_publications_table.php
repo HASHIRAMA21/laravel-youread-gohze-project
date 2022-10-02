@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('publications', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
+            $table->string('title');
             $table->string('description');
             $table->dateTime('publish_date');
             $table->string('category');
             $table->boolean('status')->nullable();
             $table->string('file');
-            $table->integer('views');
-            $table->integer('likes');
-            $table->integer('dislikes');
+            $table->integer('views')->nullable();
+            $table->integer('likes')->nullable();
+            $table->integer('dislikes')->nullable();
             $table->timestamps();
         });
     }
