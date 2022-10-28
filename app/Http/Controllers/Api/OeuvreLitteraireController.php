@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\OeuvreLitteraire;
+use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\OeuvreLitteraireResource;
@@ -97,9 +98,21 @@ if ($validator->fails()) {
      * @param  \App\Models\OeuvreLitteraire  $oeuvreLitteraire
      * @return \Illuminate\Http\Response
      */
-    public function show(OeuvreLitteraire $oeuvreLitteraire)
+    public function show($id)
     {
-        //
+        $oeuvreLitteraire = OeuvreLitteraire::findOrFail($id);
+
+        if(!empty($publication))
+        {
+            return response()->json($oeuvreLitteraire);
+        }
+        else
+        {
+            return response()->json([
+                "message" => "Publicat not found"
+            ], 404);
+        }
+    }
     }
 
     /**

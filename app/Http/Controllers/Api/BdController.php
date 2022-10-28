@@ -7,7 +7,9 @@ use App\Http\Resources\BdResource;
 use App\Http\Resources\PublicationResource;
 use App\Models\Bd;
 use App\Models\Publication;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 
 class BdController extends Controller
@@ -15,7 +17,7 @@ class BdController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -31,7 +33,7 @@ class BdController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -90,12 +92,13 @@ if ($validator->fails()) {
      * Display the specified resource.
      *
      * @param  \App\Models\Bd  $bd
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function show(Request $id)
+    public function show($id)
     {
-        $bd = Bd::find($id);
-        if(!empty($book))
+       $bd = Bd::findOrFail($id);
+
+        if(!empty($bd))
         {
             return response()->json($bd);
         }
@@ -107,12 +110,17 @@ if ($validator->fails()) {
         }
     }
 
+    public function uniqueBd($id){
+        $bd =Bd::destroy($id);
+        return response()->json(['message'=>'Successfuly delete the bd']);
+    }
+
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Bd  $bd
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function update(Request $request, Bd $bd)
     {
@@ -123,7 +131,7 @@ if ($validator->fails()) {
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Bd  $bd
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function destroy($id)
     {
@@ -142,6 +150,11 @@ if ($validator->fails()) {
             ], 404);
         }
     }
+    public function deleteBd($id){
+        $bd = Bd::findOrFail($id);
+        $bd->delete();
+        return response()->json(['message'=>'Successfull Delete the Bd']);
+    }
 
     public function paginateBd() {
         $bd = Bd::paginate(40);
@@ -159,9 +172,9 @@ if ($validator->fails()) {
           return view('file-upload');
             }
 
-            
+
     /**
-     * 
+     *
      * public function uploadBd(Request $request){
         $request->validate([
         'file' => 'required|mimes:csv,txt,xlx,xls,pdf|max:204800'
@@ -190,7 +203,7 @@ if ($validator->fails()) {
             ->with('file', $fileName);
         }
     }
-    
+
      */
 
         }

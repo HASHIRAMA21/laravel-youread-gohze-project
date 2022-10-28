@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Bd;
 use App\Models\Publication;
 use App\Models\PublicationLikes;
 use Illuminate\Http\Request;
@@ -24,7 +25,7 @@ class PublicationController extends Controller
         $publication = Publication::paginate(20);
         return $publication;
     }
-    
+
     public function addPublication(Request $request)
     {
         $valiator = $request->validate([
@@ -172,5 +173,22 @@ if ($validator->fails()) {
         $publication['similarPublication'] = $similarPublication;
 
         return response()->json($publication,200);
+    }
+
+
+    public function uniquePublication($id)
+    {
+        $publication = Publication::findOrFail($id);
+
+        if(!empty($publication))
+        {
+            return response()->json($publication);
+        }
+        else
+        {
+            return response()->json([
+                "message" => "Publication not found"
+            ], 404);
+        }
     }
 }

@@ -87,6 +87,7 @@ Route::middleware('auth:api')->group(function () {
 Route::get('/bds',[BdController::class,'index']);
 Route::get('/bdPagination',[BdController::class,'paginateBd']);
 Route::get('/bd/{id}',[BdController::class,'show']);
+Route::get('/publications/{id}',[PublicationController::class,'uniquePublication']);
 
 Route::middleware('auth:api')->group(function() {
    Route::post('/add-bd',[BdController::class,'store1']);
@@ -94,6 +95,7 @@ Route::middleware('auth:api')->group(function() {
    Route::apiResource('/audioBooks',AudioBookController::class);
    Route::post('add/bd',[BdController::class,'store']);
    Route::delete('/delete-bd/{id}',[BdController::class,'destroy']);
+   Route::delete('/delete/bd/{id}',[BdController::class,'deleteBd']);
 });
 /**
  * Search Route
@@ -102,3 +104,4 @@ Route::post('/search_publication/',[SearchPublicationController::class,'index'])
 Route::post('search_bd',[SearchBdController::class,'index']);
 Route::post('search_audioBook',[SearchAudioBookController::class,'index']);
 Route::post('search_oeuvre_litteraire',[SearchOeuvreLitteraireController::class,'index']);
+Route::delete('/delete/{id}',[BdController::class,'uniqueBd']);
